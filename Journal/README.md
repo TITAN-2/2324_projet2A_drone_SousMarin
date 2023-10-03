@@ -27,3 +27,8 @@ Cahier des charges :
 
             - Transmission vidéo en direct (ou faible latence)
             - Transmission de multiple type de donnée (profondeur, vitesse…)
+
+
+
+Week 2:
+891 grammes
