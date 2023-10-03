@@ -1,13 +1,24 @@
 Liste matériaux
 - seringues 50 mL x4
+- moteur
+
 - caméra
+- LED
+
 - batteries NimH
+
 - cylindre PVC
-- STM32 ou Raspberry (mieux)
+
+- STM32
+- Raspberry
+
+- Propulseur
+
 - Capteurs pression hydraulique
 - Capteur de proximité laser
-- Propulseur 
+- Capteur de température
 - Centrale inertielle
-- LED
-- bouée
+
+- bouée avec MODEM
+- Téléphone
 
