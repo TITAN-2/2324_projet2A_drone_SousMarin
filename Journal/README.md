@@ -32,3 +32,8 @@ Cahier des charges :
 
 Week 2:
 891 grammes
+
+Week 3 : 
+
+- On a récupéré le tube en PVC collé et rempli de sable par M. PAPAZOGLOU, puis on a trouvé la masse nécesaire pour que l'on se retrouve au point de flotaison : 3,120kg
+- On s'est également penché sur la manière de faire avancer le sous-marin dans l'eau, comparant les prix entre les hélices sur le côté ou une hélice arrière commandée par un aimant qui tourne.
