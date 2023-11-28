@@ -37,7 +37,7 @@ def send_data_to_stm32(thrust, angle, serial_port, baud_rate=9600):
         print(f'Erreur lors de l\'envoi des données : {e}')
 
 # Exemple d'utilisation
-thrust_value = 1500
-angle_value = 45
+thrust_value = UART(1500)
+angle_value = UART5(45)
 serial_port = "/dev/ttyS0"  # Assurez-vous de spécifier le port UART correct
 send_data_to_stm32(thrust_value, angle_value, serial_port)
