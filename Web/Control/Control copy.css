@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Pour éviter le défilement de la page */
+}
+
+#joystick-container {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 100px; /* Ajustez la distance par rapport au bas de la page */
+    right: 100px; /* Ajustez la distance par rapport à la droite de la page */
+}
+
+#joystick-handle {
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+#joystick_vert-container {
+    width: 50px;
+    height: 150px;
+    background-color: #ccc;
+    border-top-left-radius: 25px; /* Ajustez la valeur pour changer le rayon */
+    border-top-right-radius: 25px; /* Ajustez la valeur pour changer le rayon */
+    border-bottom-left-radius: 25px; /* Ajustez la valeur pour changer le rayon */
+    border-bottom-right-radius: 25px; /* Ajustez la valeur pour changer le rayon */
+    position: fixed;
+    bottom: 100px; /* Ajustez la distance par rapport au bas de la page */
+    left: 100px; /* Ajustez la distance par rapport à la droite de la page */
+}
+
+#joystick_vert-handle {
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
