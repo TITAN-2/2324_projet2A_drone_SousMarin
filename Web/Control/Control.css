@@ -77,3 +77,16 @@ body {
     transform: translate(-50%, -50%);
     cursor: pointer;
 }
+
+#joystick-values {
+    position: fixed;
+    top: 10px; /* Ajustez la distance par rapport au haut de la page */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Centre horizontalement */
+    text-align: center; /* Centrer le texte horizontalement */
+    display: flex; /* Utiliser le modèle de boîte flexible */
+}
+
+#joystick-values p {
+    margin: 0 20px; /* Marge entre chaque compteur */
+}
