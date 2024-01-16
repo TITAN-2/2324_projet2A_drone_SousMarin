@@ -1,4 +1,4 @@
-# TIPS POUR TESTER CE MODULE
+# TESTER LA RECEPTION STM32
 
 ## Installation de minicom
 ### Pour MAC
