@@ -42,9 +42,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-	extern uint8_t data_buffer[100];
-	extern uint8_t recvd_data;
-	extern uint32_t count;
+	extern uint64_t recvd_data;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -59,9 +57,9 @@
 
 /* External variables --------------------------------------------------------*/
 extern UART_HandleTypeDef huart4;
-
 /* USER CODE BEGIN EV */
 extern UART_HandleTypeDef huart3;
+
 
 /* USER CODE END EV */
 
@@ -209,31 +207,11 @@ void SysTick_Handler(void)
 void UART4_IRQHandler(void)
 {
   /* USER CODE BEGIN UART4_IRQn 0 */
-	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,GPIO_PIN_SET); // the user led Yellow
-	HAL_UART_RxCpltCallback(&huart4);
   /* USER CODE END UART4_IRQn 0 */
   HAL_UART_IRQHandler(&huart4);
   /* USER CODE BEGIN UART4_IRQn 1 */
-  HAL_Delay(200);
-	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_14,GPIO_PIN_RESET); //toggle the user led Yellow
-
   /* USER CODE END UART4_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-
-	 if(count==10)
-	 {
-		 data_buffer[count++]='\r';
-		 HAL_UART_Transmit(&huart3,data_buffer,count,HAL_MAX_DELAY); //transmit the full sentence again
-		 memset(data_buffer, 0, count); // empty the data buffer
-	 }
-	 else
-	 {
-		 data_buffer[count++] = recvd_data; // every time when interrupt is happen, received 1 byte of data
-	 }
-	 HAL_UART_Receive_IT(huart,&recvd_data,1); //start next data receive interrupt
-}
 /* USER CODE END 1 */
