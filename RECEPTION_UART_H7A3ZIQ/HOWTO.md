@@ -38,4 +38,5 @@ On recoit un message de 8 octet de la forme:
 1 bit : Check Sum --> méthode XOR
 x bits : RPI Response --> Renvoie un message de confirmation ou non à la Raspberry
 
-
+>[!NOTE]
+>'echo -ne "\xFF\xFE\x08\x53\x1A\x64\x10\xFF" > /dev/ttyS0'
