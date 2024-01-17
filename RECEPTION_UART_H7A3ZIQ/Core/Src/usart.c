@@ -252,7 +252,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	if (UART4 == huart->Instance)
 	{
 		RPICom_DecodeBinaryMessage();
-		RPICom_UartActivate();
+		RPICom_UartActivate(&hRPICom);
 	}
 }
 /* USER CODE END 1 */
