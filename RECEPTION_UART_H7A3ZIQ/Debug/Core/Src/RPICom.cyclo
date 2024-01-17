@@ -1,3 +1,4 @@
 RPICom.c:6:6:RPICom_Init	1
 RPICom.c:10:6:RPICom_UartActivate	1
-RPICom.c:15:6:RPICom_DecodeBinaryMessage	1
+RPICom.c:14:9:checkSum	2
+RPICom.c:22:6:RPICom_DecodeBinaryMessage	5
