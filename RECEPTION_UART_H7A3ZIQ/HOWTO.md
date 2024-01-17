@@ -30,7 +30,7 @@ minicom -b 115200 -D /dev/tty.usbmodem1303
 On banche raspberry (TX : pin 6) sur la STM32 (RX : PD0, uart4)
 
 ## DETAILS DE COMMUNICATION
-### Message Recu 
+### Message Recu | Procédure "maison"
 On recoit un message de 8 octet de la forme:
 - 2 bits : Check Header --> 0xFFFE
 - 1 bit : Check Length --> 8
@@ -40,5 +40,7 @@ On recoit un message de 8 octet de la forme:
 
 ```
 stty -F /dev/ttyS0 115200
-echo -ne "\xFF\xFE\x08\x53\x1A\x64\x10\xFF" > /dev/ttyS0
+echo -ne "\xFF\xFE\x09\x53\x1A\x64\x10\xFF\0xCB" > /dev/ttyS0
 ```
+- [ ] Coder le DYNAMIXEL Protocle pour l'échnage UART
+> Réaliser le même protocole que celui possiblement utilisé par les servo-moteurs. 1 pierre 2 coups.
