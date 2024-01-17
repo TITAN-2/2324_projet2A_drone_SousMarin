@@ -32,11 +32,11 @@ On banche raspberry (TX : pin 6) sur la STM32 (RX : PD0, uart4)
 ## DETAILS DE COMMUNICATION
 ### Message Recu 
 On recoit un message de 8 octet de la forme:
-2 bits : Check Header --> 0xFFFE
-1 bit : Check Length --> 8
-5 bits : Message --> thrust | angle | depth | paquetNumber
-1 bit : Check Sum --> méthode XOR
-x bits : RPI Response --> Renvoie un message de confirmation ou non à la Raspberry
+- 2 bits : Check Header --> 0xFFFE
+- 1 bit : Check Length --> 8
+- 5 bits : Message --> thrust | angle | depth | paquetNumber
+- 1 bit : Check Sum --> méthode XOR
+- x bits : RPI Response --> Renvoie un message de confirmation ou non à la Raspberry
 
 >[!NOTE]
->'echo -ne "\xFF\xFE\x08\x53\x1A\x64\x10\xFF" > /dev/ttyS0'
+> `echo -ne "\xFF\xFE\x08\x53\x1A\x64\x10\xFF" > /dev/ttyS0`
