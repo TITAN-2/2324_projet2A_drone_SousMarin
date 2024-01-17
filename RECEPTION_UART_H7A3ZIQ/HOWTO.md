@@ -25,3 +25,17 @@ minicom -b 115200 -D /dev/tty.usbmodem1303
 >[!NOTE]
 > Remplacer le .usbmodem1303 par ce qui convient
 
+## BRANCHEMENT SUR STM32
+### SUR LA H7A3
+On banche raspberry (TX : pin 6) sur la STM32 (RX : PD0, uart4)
+
+## DETAILS DE COMMUNICATION
+### Message Recu 
+On recoit un message de 8 octet de la forme:
+2 bits : Check Header --> 0xFFFE
+1 bit : Check Length --> 8
+5 bits : Message --> thrust | angle | depth | paquetNumber
+1 bit : Check Sum --> méthode XOR
+x bits : RPI Response --> Renvoie un message de confirmation ou non à la Raspberry
+
+
