@@ -570,7 +570,6 @@ void RPICom_DecodeBinaryMessage(void)
  8000790:	2232      	movs	r2, #50	; 0x32
  8000792:	739a      	strb	r2, [r3, #14]
 	}
-
 	hRPICom.binaryMessage.thrust = hRPICom.RxBuffer[3];
  8000794:	4b20      	ldr	r3, [pc, #128]	; (8000818 <RPICom_DecodeBinaryMessage+0xb4>)
  8000796:	7c9a      	ldrb	r2, [r3, #18]

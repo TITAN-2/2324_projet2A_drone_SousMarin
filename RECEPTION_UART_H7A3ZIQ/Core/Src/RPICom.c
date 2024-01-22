@@ -37,7 +37,6 @@ void RPICom_DecodeBinaryMessage(void)
 	if (UART_RPI_RX_BUFFER_SIZE != hRPICom.RxBuffer[2]){// Il nous manque des informations
 		hRPICom.errorNumber='2';
 	}
-
 	hRPICom.binaryMessage.thrust = hRPICom.RxBuffer[3];
 	hRPICom.binaryMessage.angle = hRPICom.RxBuffer[4];
 	hRPICom.binaryMessage.depth = ((uint16_t)hRPICom.RxBuffer[5]+(uint16_t)(hRPICom.RxBuffer[6]<<8));
@@ -59,10 +58,6 @@ void RPICom_DecodeBinaryMessage(void)
 
 	//Process(&binaryMessage);
 }
-
-
-
-//HAL_UART_Receive_IT(&huart4,&recvd_data,sizeof(recvd_data));
 
 
 

@@ -17,14 +17,14 @@ struct TIM_PROP{
 	HAL_TIM_ActiveChannel CHANNEL;
 };
 
-TIM_HandleTypeDef htim2;
 struct TIM_PROP TIM_PROP_G ={&htim2,HAL_TIM_ACTIVE_CHANNEL_1};
 struct TIM_PROP TIM_PROP_D={&htim2,HAL_TIM_ACTIVE_CHANNEL_2};
+
 
 void Thrust_Init(void);
 void Process(commandMsg* message);
 void Process_Init(void);
-void AdjustThrust(struct TIM_PROP tim_prop ,uint8_t thrust);
+void AdjustThrust(struct TIM_PROP* tim_prop ,uint8_t thrust);
 void AdjustAngle(int8_t angle);
 
 #endif /* INC_PROCESS_H_ */
