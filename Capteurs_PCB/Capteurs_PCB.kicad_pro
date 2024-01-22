@@ -471,6 +471,22 @@
     [
       "1101af8f-9425-4102-9245-339dc54562bf",
       ""
+    ],
+    [
+      "5a49e44b-df85-4cd7-b98e-18311503a9a2",
+      "Gyroscope-Accéléromètre"
+    ],
+    [
+      "3d971057-5943-41d9-af92-399a5cf9d777",
+      "Capteur de Pression"
+    ],
+    [
+      "484fed71-765a-4020-a5ac-867b14a93f63",
+      "Microcontrolleur"
+    ],
+    [
+      "b84a61ef-89d4-47b7-a16e-5e36daa53b0c",
+      "Regulation 5V"
     ]
   ],
   "text_variables": {}
