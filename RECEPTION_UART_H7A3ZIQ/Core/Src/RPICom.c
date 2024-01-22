@@ -65,14 +65,4 @@ void RPICom_DecodeBinaryMessage(void)
 //HAL_UART_Receive_IT(&huart4,&recvd_data,sizeof(recvd_data));
 
 
-/*void Process(commandMsg* message){
-	AdjustThrust(message->thrust);
-	AdjustAngle(message->angle);
 
-	HAL_UART_Transmit_IT(&huart3,message->thrust,1); //receive data from data buffer interrupt mode
-	HAL_UART_Transmit_IT(&huart3,message->angle,1);
-}*/
-
-//void AdjustThrust(int thrust){}
-
-//void AdjustAngle(int angle){}

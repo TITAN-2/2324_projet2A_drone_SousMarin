@@ -1,3 +1,4 @@
+"./Core/Src/Process.o"
 "./Core/Src/RPICom.o"
 "./Core/Src/gpio.o"
 "./Core/Src/main.o"
@@ -6,6 +7,7 @@
 "./Core/Src/syscalls.o"
 "./Core/Src/sysmem.o"
 "./Core/Src/system_stm32h7xx.o"
+"./Core/Src/tim.o"
 "./Core/Src/usart.o"
 "./Core/Src/usb_otg.o"
 "./Core/Startup/startup_stm32h7a3zitxq.o"
