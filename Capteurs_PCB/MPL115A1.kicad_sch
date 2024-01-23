@@ -186,6 +186,13 @@
     (uuid 0661f67e-6958-4997-b7dc-789bd96b7798)
   )
 
+  (global_label "SCLK" (shape input) (at 143.51 96.52 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 756128c5-aab5-45d8-836a-47f2065b532f)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 151.1934 96.52 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+  )
   (global_label "VDD" (shape input) (at 95.25 102.87 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid d2434cf4-eafa-4fab-8a29-b82c39ffad27)
