@@ -1,0 +1,29 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app/static/css/index.css">
+</head>
+<body>
+
+    <div id="joystick-vitesse-container">
+        <div id="joystick-vitesse-handle"></div>
+    </div>
+    <div id="joystick-profondeur-container">
+        <div id="joystick-profondeur-handle"></div>
+    </div>
+    <div id="joystick-direction-container">
+        <div id="joystick-direction-handle"></div>
+    </div>
+    <div id="joystick-values">
+        <p>Vitesse: <span id="vitesse-value">0</span></p>
+        <p>Profondeur: <span id="profondeur-value">0</span></p>
+        <p>Direction: <span id="direction-value">0</span></p>
+    </div>
+    <script src="/app/static/js/app.js"></script>
+    <img src="/app/stream.mjpg" width="650" height="400" />
+</body>
+</html>

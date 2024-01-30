@@ -1,5 +1,5 @@
 Process.c:10:6:Thrust_Init	21
-Process.c:20:6:Process_Init	1
-Process.c:24:6:Process	1
-Process.c:33:6:AdjustThrust	6
-Process.c:37:6:AdjustAngle	1
+Process.c:24:6:Process_Init	1
+Process.c:28:6:Process	1
+Process.c:37:6:AdjustThrust	6
+Process.c:41:6:AdjustAngle	3

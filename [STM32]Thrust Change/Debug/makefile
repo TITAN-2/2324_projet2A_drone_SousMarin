@@ -60,8 +60,8 @@ all: main-build
 main-build: TITAN_2.elf secondary-outputs
 
 # Tool invocations
-TITAN_2.elf TITAN_2.map: $(OBJS) $(USER_OBJS) /Users/romingo/Desktop/ENSEA/2A/PROJET\ TITAN/STM32H7A3ZITXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "TITAN_2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/Users/romingo/Desktop/ENSEA/2A/PROJET TITAN/STM32H7A3ZITXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="TITAN_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+TITAN_2.elf TITAN_2.map: $(OBJS) $(USER_OBJS) /Users/romingo/Documents/GitHub/2324_projet2A_drone_SousMarin/[STM32]Thrust\ Change/STM32H7A3ZITXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "TITAN_2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/Users/romingo/Documents/GitHub/2324_projet2A_drone_SousMarin/[STM32]Thrust Change/STM32H7A3ZITXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="TITAN_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
