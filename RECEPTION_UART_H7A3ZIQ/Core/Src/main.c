@@ -94,7 +94,8 @@ int main(void)
   MX_UART4_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-	HAL_UART_Transmit(&huart3, "Starting...\r\n", 13, 10);
+	HAL_UART_Transmit(&huart3, "\nStarting...\r\n", 14, 10);
+	Process_Init();
 	RPICom_Init(&huart4, &huart3);
 	HAL_UART_Transmit(&huart3, "Init Done\r\n", 11, 10);
 

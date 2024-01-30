@@ -3,7 +3,6 @@
 //uint8_t uartRpiRxBuffer[UART_RPI_RX_BUFFER_SIZE];
 //commandMsg binaryMessage;
 RPICom_HandleTypeDef hRPICom;
-
 void RPICom_Init(UART_HandleTypeDef* huart, UART_HandleTypeDef* huartDebug){
 	hRPICom.huart = huart;
 	hRPICom.huartDebug = huartDebug;
@@ -48,15 +47,17 @@ void RPICom_DecodeBinaryMessage(void)
 	}
 
 	//Response RPI
-	uint8_t stringLength = snprintf((char *)hRPICom.TxBuffer, UART_RPI_TX_BUFFER_SIZE, "Paquet: %u\r\nStatut: %c\r\n", hRPICom.binaryMessage.paquetNumber,hRPICom.errorNumber);
+	uint8_t stringLength = snprintf((char *)hRPICom.TxBuffer, UART_RPI_TX_BUFFER_SIZE, "Paquet: %u\r\nContenu: %u\r\nStatut: %c\r\n", hRPICom.binaryMessage.paquetNumber,hRPICom.binaryMessage.thrust,hRPICom.errorNumber);
+	hRPICom.TxBuffer[UART_RPI_TX_BUFFER_SIZE-1] = 0; //Securité de print
 	HAL_UART_Transmit(hRPICom.huartDebug, hRPICom.TxBuffer, stringLength, 10);
 	RPICom_UartActivate(&hRPICom);
 
 	// Vous avez maintenant un message complet dans la structure BinaryMessage
 	// Vous pouvez faire quelque chose avec ces données, par exemple, appeler une fonction de traitement
 
-
-	//Process(&binaryMessage);
+	if (hRPICom.errorNumber =='0'){
+		Process(&hRPICom.binaryMessage);
+	}
 }
 
 
