@@ -40,7 +40,11 @@ On recoit un message de 8 octet de la forme:
 
 ```
 stty -F /dev/ttyS0 115200
-echo -ne "\xFF\xFE\x09\x53\x1A\x64\x10\xFF\0xCB" > /dev/ttyS0
+echo -ne "\xFF\xFE\x09\x53\x1A\x64\x10\xFF\xCB" > /dev/ttyS0
+```
+```
+stty -F /dev/ttyS0 115200
+echo -ne "\xFF\xFE\x09\x53\x2D\x64\x10\xFF\xFD" > /dev/ttyS0
 ```
 ### RECEPTION | DYNAMIXEL 2.0
 - [ ] https://github.com/TITAN-2/2324_projet2A_drone_SousMarin/issues/2
