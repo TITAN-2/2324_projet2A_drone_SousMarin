@@ -927,8 +927,8 @@
     (property "Datasheet" "~" (at 69.85 113.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid 5f1e8bee-645f-48c5-a480-ac2b69b73123))
     (pin "1" (uuid 0441235c-6bd9-4fb4-9aef-54704d74d654))
+    (pin "2" (uuid 5f1e8bee-645f-48c5-a480-ac2b69b73123))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -966,10 +966,10 @@
   (symbol (lib_id "Device:R_Small") (at 104.14 116.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 25b0d975-cc87-47c1-9b42-488241f11fc0)
-    (property "Reference" "R403" (at 106.68 115.57 0)
+    (property "Reference" "R403" (at 106.68 116.205 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "RFBB" (at 106.68 118.11 0)
+    (property "Value" "402k" (at 106.68 118.745 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (at 104.14 116.84 0)
@@ -1004,8 +1004,8 @@
     (property "Datasheet" "~" (at 199.39 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid 039ed5bd-7aae-4227-a433-8e50aabc78c0))
     (pin "1" (uuid a6dc486c-ae85-469e-9ce1-d5cbff64ab0d))
+    (pin "2" (uuid 039ed5bd-7aae-4227-a433-8e50aabc78c0))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1081,8 +1081,8 @@
     (property "Datasheet" "~" (at 185.42 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid 8d99391d-74c3-4881-8339-1ec15e3dde57))
     (pin "1" (uuid b82f3bc5-6160-4be8-b69a-b12115dcef07))
+    (pin "2" (uuid 8d99391d-74c3-4881-8339-1ec15e3dde57))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1107,8 +1107,8 @@
     (property "Datasheet" "~" (at 213.36 73.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid e7faac29-5934-4751-8873-db25e901bd6c))
     (pin "1" (uuid 6331a2cc-b6af-4bfc-ad01-2ef8a9d0bf09))
+    (pin "2" (uuid e7faac29-5934-4751-8873-db25e901bd6c))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1136,8 +1136,8 @@
     (property "MPN" "865060543005" (at 119.38 110.49 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid a17cbacd-48c0-465e-b44d-560a0b8284d3))
     (pin "1" (uuid 26292989-d470-49ca-b5a0-40024b491e77))
+    (pin "2" (uuid a17cbacd-48c0-465e-b44d-560a0b8284d3))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1188,8 +1188,8 @@
     (property "Datasheet" "~" (at 69.85 67.31 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid caf5a695-5d31-4a7e-bc5d-2e6e231db734))
     (pin "1" (uuid 74daac31-b6bb-407d-a9db-8fc3c91612eb))
+    (pin "2" (uuid caf5a695-5d31-4a7e-bc5d-2e6e231db734))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1254,10 +1254,10 @@
   (symbol (lib_id "Device:R_Small") (at 104.14 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5aa7415c-3880-4c10-bdb3-d3a6cce53236)
-    (property "Reference" "R406" (at 106.68 69.85 0)
+    (property "Reference" "RFBB" (at 106.68 70.485 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "RFBB" (at 106.68 72.39 0)
+    (property "Value" "402k" (at 106.68 73.025 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (at 104.14 71.12 0)
@@ -1271,7 +1271,7 @@
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
-          (reference "R406") (unit 1)
+          (reference "RFBB") (unit 1)
         )
       )
     )
@@ -1342,8 +1342,8 @@
     (property "Datasheet" "~" (at 199.39 73.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid 94ec0df6-8576-4d1f-bab8-2df9d9d967bd))
     (pin "1" (uuid 55df058f-fab4-4a26-b693-eca8126fce34))
+    (pin "2" (uuid 94ec0df6-8576-4d1f-bab8-2df9d9d967bd))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1356,10 +1356,10 @@
   (symbol (lib_id "Device:R_Small") (at 104.14 109.22 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 643e25c6-36f3-4c01-85e5-5f01366f265f)
-    (property "Reference" "R402" (at 106.68 107.95 0)
+    (property "Reference" "R402" (at 106.68 108.585 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "RFBT" (at 106.68 110.49 0)
+    (property "Value" "80.4" (at 106.68 111.125 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (at 104.14 109.22 0)
@@ -1420,8 +1420,8 @@
     (property "Datasheet" "~" (at 213.36 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid eb37b1cf-53e7-402d-8843-e2e3c1ccf211))
     (pin "1" (uuid 72920d05-9be6-47b2-a354-a571e1df0fbf))
+    (pin "2" (uuid eb37b1cf-53e7-402d-8843-e2e3c1ccf211))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1474,18 +1474,18 @@
     (property "MPN" "171013801" (at 86.36 63.5 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "11" (uuid dd19f0dc-136b-408c-b8d2-1bfb8b076df7))
-    (pin "6" (uuid 79632750-71a3-40dc-b330-741cc1515d07))
-    (pin "12" (uuid 5fa44d57-e5e5-4e2a-8480-77dd8e8e7214))
-    (pin "5" (uuid 728a4d41-45b4-4e56-809c-c02cfaa0d8fa))
-    (pin "7" (uuid 56527dcb-647a-4ad1-954b-9e496cc41a49))
-    (pin "9" (uuid 08ac31d3-f49c-42bd-aa66-f8974ba878a0))
-    (pin "10" (uuid 12c50bd2-4b38-4e84-9c03-a6cdf7f52e52))
     (pin "1" (uuid b328fd1e-1fd5-44bd-b7a2-97ad5f26bcbc))
+    (pin "10" (uuid 12c50bd2-4b38-4e84-9c03-a6cdf7f52e52))
+    (pin "11" (uuid dd19f0dc-136b-408c-b8d2-1bfb8b076df7))
+    (pin "12" (uuid 5fa44d57-e5e5-4e2a-8480-77dd8e8e7214))
+    (pin "13" (uuid 2edbc8ec-4fee-43ec-8989-c3205e1c11e4))
+    (pin "2" (uuid 87c397bc-3f8d-4001-94da-e24cee5f1765))
     (pin "3" (uuid 7972fb2c-f75e-48ca-a298-539ff0911f90))
     (pin "4" (uuid 9b68cd3b-99e8-44c7-bed1-54efdf399c25))
-    (pin "2" (uuid 87c397bc-3f8d-4001-94da-e24cee5f1765))
-    (pin "13" (uuid 2edbc8ec-4fee-43ec-8989-c3205e1c11e4))
+    (pin "5" (uuid 728a4d41-45b4-4e56-809c-c02cfaa0d8fa))
+    (pin "6" (uuid 79632750-71a3-40dc-b330-741cc1515d07))
+    (pin "7" (uuid 56527dcb-647a-4ad1-954b-9e496cc41a49))
+    (pin "9" (uuid 08ac31d3-f49c-42bd-aa66-f8974ba878a0))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1538,18 +1538,18 @@
     (property "MPN" "171013801" (at 86.36 109.22 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "11" (uuid b49d271c-f1d4-4b32-9db6-9c346d4e47c8))
-    (pin "6" (uuid 3259d4e0-3102-44b8-88fa-ada957af8dd2))
-    (pin "12" (uuid 8304fe2c-d4a3-4137-98f6-f7bc6ddfecd3))
-    (pin "5" (uuid 9b9cf551-e426-4737-8a81-a085fb3c40d4))
-    (pin "7" (uuid c0e6563c-4fe7-4351-99b6-11899f74dcf4))
-    (pin "9" (uuid 0b58881e-77ae-4b95-bc00-31576fd8a638))
-    (pin "10" (uuid d55ba854-53f7-4881-bae6-cbd32390ece9))
     (pin "1" (uuid c0261867-b57a-4e3c-9723-a416e7a9d1f7))
+    (pin "10" (uuid d55ba854-53f7-4881-bae6-cbd32390ece9))
+    (pin "11" (uuid b49d271c-f1d4-4b32-9db6-9c346d4e47c8))
+    (pin "12" (uuid 8304fe2c-d4a3-4137-98f6-f7bc6ddfecd3))
+    (pin "13" (uuid 2a36806f-a8e7-4273-a397-1df9a4381dbc))
+    (pin "2" (uuid 242679a2-4858-4a3c-a118-a0f3290eed51))
     (pin "3" (uuid f353b74b-cb7f-4473-bc39-29c20980360b))
     (pin "4" (uuid 9ea45b40-bb8b-4b81-a1a6-c30d2b3c7627))
-    (pin "2" (uuid 242679a2-4858-4a3c-a118-a0f3290eed51))
-    (pin "13" (uuid 2a36806f-a8e7-4273-a397-1df9a4381dbc))
+    (pin "5" (uuid 9b9cf551-e426-4737-8a81-a085fb3c40d4))
+    (pin "6" (uuid 3259d4e0-3102-44b8-88fa-ada957af8dd2))
+    (pin "7" (uuid c0e6563c-4fe7-4351-99b6-11899f74dcf4))
+    (pin "9" (uuid 0b58881e-77ae-4b95-bc00-31576fd8a638))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1574,8 +1574,8 @@
     (property "Datasheet" "~" (at 185.42 73.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid b36aa00b-d6aa-46a5-8bb9-cefd8e2ce18c))
     (pin "1" (uuid 8c8bbfa5-7545-4b5a-97c0-69aa7dd9d4ec))
+    (pin "2" (uuid b36aa00b-d6aa-46a5-8bb9-cefd8e2ce18c))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1603,8 +1603,8 @@
     (property "MPN" "865060542002" (at 57.15 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid b7211a94-5d76-43e6-9e75-e5aaa15f4e9f))
     (pin "1" (uuid b4376c08-e3f8-4fa6-ad7b-ea13f56eff15))
+    (pin "2" (uuid b7211a94-5d76-43e6-9e75-e5aaa15f4e9f))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1657,8 +1657,8 @@
     (property "MPN" "865060542002" (at 57.15 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid ee43a60a-9133-4117-a8be-73873e79daec))
     (pin "1" (uuid 7fb14558-81a2-4fdd-87ff-3b59103f695d))
+    (pin "2" (uuid ee43a60a-9133-4117-a8be-73873e79daec))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1686,8 +1686,8 @@
     (property "MPN" "865060543005" (at 119.38 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid c4ea0502-98c4-4edc-9367-9eca837baaf9))
     (pin "1" (uuid a7de4acc-b79c-4186-94f9-3515f84a2913))
+    (pin "2" (uuid c4ea0502-98c4-4edc-9367-9eca837baaf9))
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
@@ -1751,10 +1751,10 @@
   (symbol (lib_id "Device:R_Small") (at 104.14 63.5 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c2d647ba-511a-4c13-b260-d3e45ac01519)
-    (property "Reference" "R405" (at 106.68 62.23 0)
+    (property "Reference" "RFBT" (at 106.68 62.865 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "RFBT" (at 106.68 64.77 0)
+    (property "Value" "52.2k" (at 106.68 65.405 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (at 104.14 63.5 0)
@@ -1768,7 +1768,7 @@
     (instances
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/b84a61ef-89d4-47b7-a16e-5e36daa53b0c"
-          (reference "R405") (unit 1)
+          (reference "RFBT") (unit 1)
         )
       )
     )
