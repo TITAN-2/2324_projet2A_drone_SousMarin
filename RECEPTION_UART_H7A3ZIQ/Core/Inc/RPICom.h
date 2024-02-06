@@ -9,6 +9,7 @@
 #define INC_RPICOM_H_
 
 #include "usart.h"
+#include "RPICom.h"
 
 #define UART_RPI_RX_BUFFER_SIZE 9
 #define UART_RPI_TX_BUFFER_SIZE 64

@@ -47,10 +47,10 @@ void RPICom_DecodeBinaryMessage(void)
 	}
 
 	//Response RPI
-	uint8_t stringLength = snprintf((char *)hRPICom.TxBuffer, UART_RPI_TX_BUFFER_SIZE, "Paquet: %u\r\nContenu: %u\r\nStatut: %c\r\n", hRPICom.binaryMessage.paquetNumber,hRPICom.binaryMessage.thrust,hRPICom.errorNumber);
+	uint8_t stringLength = snprintf((char *)hRPICom.TxBuffer, UART_RPI_TX_BUFFER_SIZE, "Paquet: %u\r\nThrust: %u\r\nStatut: %c\r\n", hRPICom.binaryMessage.paquetNumber,hRPICom.binaryMessage.thrust,hRPICom.errorNumber);
 	hRPICom.TxBuffer[UART_RPI_TX_BUFFER_SIZE-1] = 0; //Securité de print
 	HAL_UART_Transmit(hRPICom.huartDebug, hRPICom.TxBuffer, stringLength, 10);
-	RPICom_UartActivate(&hRPICom);
+
 
 	// Vous avez maintenant un message complet dans la structure BinaryMessage
 	// Vous pouvez faire quelque chose avec ces données, par exemple, appeler une fonction de traitement
@@ -58,6 +58,7 @@ void RPICom_DecodeBinaryMessage(void)
 	if (hRPICom.errorNumber =='0'){
 		Process(&hRPICom.binaryMessage);
 	}
+	RPICom_UartActivate(&hRPICom);
 }
 
 
