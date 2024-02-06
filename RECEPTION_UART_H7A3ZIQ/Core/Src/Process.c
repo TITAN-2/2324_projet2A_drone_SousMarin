@@ -31,11 +31,11 @@ void Process_Init(void){
 void Process(commandMsg* message) {
     AdjustThrust(&TIM_PROP_G, message->thrust);
     AdjustThrust(&TIM_PROP_D, message->thrust);
-    AdjustAngle(&message->thrust,&message->angle);
+  //  AdjustAngle(&message->thrust,&message->angle);
 }
 
 void AdjustThrust(struct TIM_PROP* tim_prop, uint8_t thrust) {
-	float thrust_ms = thrust * ((float)(MAX_Thrust - MIN_Thrust) / 100.0) + MIN_Thrust;;
+	float thrust_ms = thrust * ((float)(MIN_Thrust - MAX_Thrust) / 100.0) + MIN_Thrust;;
     __HAL_TIM_SET_COMPARE(tim_prop->TIM, tim_prop->CHANNEL,thrust_ms);
 }
 

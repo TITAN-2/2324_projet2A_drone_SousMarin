@@ -443,7 +443,7 @@ void Thrust_Init(void){
  80006c8:	4b79      	ldr	r3, [pc, #484]	; (80008b0 <Thrust_Init+0x21c>)
  80006ca:	681b      	ldr	r3, [r3, #0]
  80006cc:	681b      	ldr	r3, [r3, #0]
- 80006ce:	2232      	movs	r2, #50	; 0x32
+ 80006ce:	2264      	movs	r2, #100	; 0x64
  80006d0:	635a      	str	r2, [r3, #52]	; 0x34
  80006d2:	e02c      	b.n	800072e <Thrust_Init+0x9a>
  80006d4:	4b76      	ldr	r3, [pc, #472]	; (80008b0 <Thrust_Init+0x21c>)
@@ -453,7 +453,7 @@ void Thrust_Init(void){
  80006dc:	4b74      	ldr	r3, [pc, #464]	; (80008b0 <Thrust_Init+0x21c>)
  80006de:	681b      	ldr	r3, [r3, #0]
  80006e0:	681a      	ldr	r2, [r3, #0]
- 80006e2:	2332      	movs	r3, #50	; 0x32
+ 80006e2:	2364      	movs	r3, #100	; 0x64
  80006e4:	6393      	str	r3, [r2, #56]	; 0x38
  80006e6:	e022      	b.n	800072e <Thrust_Init+0x9a>
  80006e8:	4b71      	ldr	r3, [pc, #452]	; (80008b0 <Thrust_Init+0x21c>)
@@ -463,7 +463,7 @@ void Thrust_Init(void){
  80006f0:	4b6f      	ldr	r3, [pc, #444]	; (80008b0 <Thrust_Init+0x21c>)
  80006f2:	681b      	ldr	r3, [r3, #0]
  80006f4:	681a      	ldr	r2, [r3, #0]
- 80006f6:	2332      	movs	r3, #50	; 0x32
+ 80006f6:	2364      	movs	r3, #100	; 0x64
  80006f8:	63d3      	str	r3, [r2, #60]	; 0x3c
  80006fa:	e018      	b.n	800072e <Thrust_Init+0x9a>
  80006fc:	4b6c      	ldr	r3, [pc, #432]	; (80008b0 <Thrust_Init+0x21c>)
@@ -473,7 +473,7 @@ void Thrust_Init(void){
  8000704:	4b6a      	ldr	r3, [pc, #424]	; (80008b0 <Thrust_Init+0x21c>)
  8000706:	681b      	ldr	r3, [r3, #0]
  8000708:	681a      	ldr	r2, [r3, #0]
- 800070a:	2332      	movs	r3, #50	; 0x32
+ 800070a:	2364      	movs	r3, #100	; 0x64
  800070c:	6413      	str	r3, [r2, #64]	; 0x40
  800070e:	e00e      	b.n	800072e <Thrust_Init+0x9a>
  8000710:	4b67      	ldr	r3, [pc, #412]	; (80008b0 <Thrust_Init+0x21c>)
@@ -483,13 +483,13 @@ void Thrust_Init(void){
  8000718:	4b65      	ldr	r3, [pc, #404]	; (80008b0 <Thrust_Init+0x21c>)
  800071a:	681b      	ldr	r3, [r3, #0]
  800071c:	681a      	ldr	r2, [r3, #0]
- 800071e:	2332      	movs	r3, #50	; 0x32
+ 800071e:	2364      	movs	r3, #100	; 0x64
  8000720:	6593      	str	r3, [r2, #88]	; 0x58
  8000722:	e004      	b.n	800072e <Thrust_Init+0x9a>
  8000724:	4b62      	ldr	r3, [pc, #392]	; (80008b0 <Thrust_Init+0x21c>)
  8000726:	681b      	ldr	r3, [r3, #0]
  8000728:	681a      	ldr	r2, [r3, #0]
- 800072a:	2332      	movs	r3, #50	; 0x32
+ 800072a:	2364      	movs	r3, #100	; 0x64
  800072c:	65d3      	str	r3, [r2, #92]	; 0x5c
 	__HAL_TIM_SET_COMPARE(TIM_PROP_D.TIM, TIM_PROP_D.CHANNEL, MIN_Thrust);
  800072e:	4b61      	ldr	r3, [pc, #388]	; (80008b4 <Thrust_Init+0x220>)
@@ -499,7 +499,7 @@ void Thrust_Init(void){
  8000736:	4b5f      	ldr	r3, [pc, #380]	; (80008b4 <Thrust_Init+0x220>)
  8000738:	681b      	ldr	r3, [r3, #0]
  800073a:	681b      	ldr	r3, [r3, #0]
- 800073c:	2232      	movs	r2, #50	; 0x32
+ 800073c:	2264      	movs	r2, #100	; 0x64
  800073e:	635a      	str	r2, [r3, #52]	; 0x34
  8000740:	e02c      	b.n	800079c <Thrust_Init+0x108>
  8000742:	4b5c      	ldr	r3, [pc, #368]	; (80008b4 <Thrust_Init+0x220>)
@@ -509,7 +509,7 @@ void Thrust_Init(void){
  800074a:	4b5a      	ldr	r3, [pc, #360]	; (80008b4 <Thrust_Init+0x220>)
  800074c:	681b      	ldr	r3, [r3, #0]
  800074e:	681a      	ldr	r2, [r3, #0]
- 8000750:	2332      	movs	r3, #50	; 0x32
+ 8000750:	2364      	movs	r3, #100	; 0x64
  8000752:	6393      	str	r3, [r2, #56]	; 0x38
  8000754:	e022      	b.n	800079c <Thrust_Init+0x108>
  8000756:	4b57      	ldr	r3, [pc, #348]	; (80008b4 <Thrust_Init+0x220>)
@@ -519,7 +519,7 @@ void Thrust_Init(void){
  800075e:	4b55      	ldr	r3, [pc, #340]	; (80008b4 <Thrust_Init+0x220>)
  8000760:	681b      	ldr	r3, [r3, #0]
  8000762:	681a      	ldr	r2, [r3, #0]
- 8000764:	2332      	movs	r3, #50	; 0x32
+ 8000764:	2364      	movs	r3, #100	; 0x64
  8000766:	63d3      	str	r3, [r2, #60]	; 0x3c
  8000768:	e018      	b.n	800079c <Thrust_Init+0x108>
  800076a:	4b52      	ldr	r3, [pc, #328]	; (80008b4 <Thrust_Init+0x220>)
@@ -529,7 +529,7 @@ void Thrust_Init(void){
  8000772:	4b50      	ldr	r3, [pc, #320]	; (80008b4 <Thrust_Init+0x220>)
  8000774:	681b      	ldr	r3, [r3, #0]
  8000776:	681a      	ldr	r2, [r3, #0]
- 8000778:	2332      	movs	r3, #50	; 0x32
+ 8000778:	2364      	movs	r3, #100	; 0x64
  800077a:	6413      	str	r3, [r2, #64]	; 0x40
  800077c:	e00e      	b.n	800079c <Thrust_Init+0x108>
  800077e:	4b4d      	ldr	r3, [pc, #308]	; (80008b4 <Thrust_Init+0x220>)
@@ -539,13 +539,13 @@ void Thrust_Init(void){
  8000786:	4b4b      	ldr	r3, [pc, #300]	; (80008b4 <Thrust_Init+0x220>)
  8000788:	681b      	ldr	r3, [r3, #0]
  800078a:	681a      	ldr	r2, [r3, #0]
- 800078c:	2332      	movs	r3, #50	; 0x32
+ 800078c:	2364      	movs	r3, #100	; 0x64
  800078e:	6593      	str	r3, [r2, #88]	; 0x58
  8000790:	e004      	b.n	800079c <Thrust_Init+0x108>
  8000792:	4b48      	ldr	r3, [pc, #288]	; (80008b4 <Thrust_Init+0x220>)
  8000794:	681b      	ldr	r3, [r3, #0]
  8000796:	681a      	ldr	r2, [r3, #0]
- 8000798:	2332      	movs	r3, #50	; 0x32
+ 8000798:	2364      	movs	r3, #100	; 0x64
  800079a:	65d3      	str	r3, [r2, #92]	; 0x5c
 	HAL_Delay(1000);
  800079c:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
@@ -559,7 +559,7 @@ void Thrust_Init(void){
  80007ac:	4b40      	ldr	r3, [pc, #256]	; (80008b0 <Thrust_Init+0x21c>)
  80007ae:	681b      	ldr	r3, [r3, #0]
  80007b0:	681b      	ldr	r3, [r3, #0]
- 80007b2:	2264      	movs	r2, #100	; 0x64
+ 80007b2:	2232      	movs	r2, #50	; 0x32
  80007b4:	635a      	str	r2, [r3, #52]	; 0x34
  80007b6:	e02c      	b.n	8000812 <Thrust_Init+0x17e>
  80007b8:	4b3d      	ldr	r3, [pc, #244]	; (80008b0 <Thrust_Init+0x21c>)
@@ -569,7 +569,7 @@ void Thrust_Init(void){
  80007c0:	4b3b      	ldr	r3, [pc, #236]	; (80008b0 <Thrust_Init+0x21c>)
  80007c2:	681b      	ldr	r3, [r3, #0]
  80007c4:	681a      	ldr	r2, [r3, #0]
- 80007c6:	2364      	movs	r3, #100	; 0x64
+ 80007c6:	2332      	movs	r3, #50	; 0x32
  80007c8:	6393      	str	r3, [r2, #56]	; 0x38
  80007ca:	e022      	b.n	8000812 <Thrust_Init+0x17e>
  80007cc:	4b38      	ldr	r3, [pc, #224]	; (80008b0 <Thrust_Init+0x21c>)
@@ -579,7 +579,7 @@ void Thrust_Init(void){
  80007d4:	4b36      	ldr	r3, [pc, #216]	; (80008b0 <Thrust_Init+0x21c>)
  80007d6:	681b      	ldr	r3, [r3, #0]
  80007d8:	681a      	ldr	r2, [r3, #0]
- 80007da:	2364      	movs	r3, #100	; 0x64
+ 80007da:	2332      	movs	r3, #50	; 0x32
  80007dc:	63d3      	str	r3, [r2, #60]	; 0x3c
  80007de:	e018      	b.n	8000812 <Thrust_Init+0x17e>
  80007e0:	4b33      	ldr	r3, [pc, #204]	; (80008b0 <Thrust_Init+0x21c>)
@@ -589,7 +589,7 @@ void Thrust_Init(void){
  80007e8:	4b31      	ldr	r3, [pc, #196]	; (80008b0 <Thrust_Init+0x21c>)
  80007ea:	681b      	ldr	r3, [r3, #0]
  80007ec:	681a      	ldr	r2, [r3, #0]
- 80007ee:	2364      	movs	r3, #100	; 0x64
+ 80007ee:	2332      	movs	r3, #50	; 0x32
  80007f0:	6413      	str	r3, [r2, #64]	; 0x40
  80007f2:	e00e      	b.n	8000812 <Thrust_Init+0x17e>
  80007f4:	4b2e      	ldr	r3, [pc, #184]	; (80008b0 <Thrust_Init+0x21c>)
@@ -599,13 +599,13 @@ void Thrust_Init(void){
  80007fc:	4b2c      	ldr	r3, [pc, #176]	; (80008b0 <Thrust_Init+0x21c>)
  80007fe:	681b      	ldr	r3, [r3, #0]
  8000800:	681a      	ldr	r2, [r3, #0]
- 8000802:	2364      	movs	r3, #100	; 0x64
+ 8000802:	2332      	movs	r3, #50	; 0x32
  8000804:	6593      	str	r3, [r2, #88]	; 0x58
  8000806:	e004      	b.n	8000812 <Thrust_Init+0x17e>
  8000808:	4b29      	ldr	r3, [pc, #164]	; (80008b0 <Thrust_Init+0x21c>)
  800080a:	681b      	ldr	r3, [r3, #0]
  800080c:	681a      	ldr	r2, [r3, #0]
- 800080e:	2364      	movs	r3, #100	; 0x64
+ 800080e:	2332      	movs	r3, #50	; 0x32
  8000810:	65d3      	str	r3, [r2, #92]	; 0x5c
 	__HAL_TIM_SET_COMPARE(TIM_PROP_D.TIM, TIM_PROP_D.CHANNEL, MAX_Thrust);
  8000812:	4b28      	ldr	r3, [pc, #160]	; (80008b4 <Thrust_Init+0x220>)
@@ -615,7 +615,7 @@ void Thrust_Init(void){
  800081a:	4b26      	ldr	r3, [pc, #152]	; (80008b4 <Thrust_Init+0x220>)
  800081c:	681b      	ldr	r3, [r3, #0]
  800081e:	681b      	ldr	r3, [r3, #0]
- 8000820:	2264      	movs	r2, #100	; 0x64
+ 8000820:	2232      	movs	r2, #50	; 0x32
  8000822:	635a      	str	r2, [r3, #52]	; 0x34
  8000824:	e02c      	b.n	8000880 <Thrust_Init+0x1ec>
  8000826:	4b23      	ldr	r3, [pc, #140]	; (80008b4 <Thrust_Init+0x220>)
@@ -625,7 +625,7 @@ void Thrust_Init(void){
  800082e:	4b21      	ldr	r3, [pc, #132]	; (80008b4 <Thrust_Init+0x220>)
  8000830:	681b      	ldr	r3, [r3, #0]
  8000832:	681a      	ldr	r2, [r3, #0]
- 8000834:	2364      	movs	r3, #100	; 0x64
+ 8000834:	2332      	movs	r3, #50	; 0x32
  8000836:	6393      	str	r3, [r2, #56]	; 0x38
  8000838:	e022      	b.n	8000880 <Thrust_Init+0x1ec>
  800083a:	4b1e      	ldr	r3, [pc, #120]	; (80008b4 <Thrust_Init+0x220>)
@@ -635,7 +635,7 @@ void Thrust_Init(void){
  8000842:	4b1c      	ldr	r3, [pc, #112]	; (80008b4 <Thrust_Init+0x220>)
  8000844:	681b      	ldr	r3, [r3, #0]
  8000846:	681a      	ldr	r2, [r3, #0]
- 8000848:	2364      	movs	r3, #100	; 0x64
+ 8000848:	2332      	movs	r3, #50	; 0x32
  800084a:	63d3      	str	r3, [r2, #60]	; 0x3c
  800084c:	e018      	b.n	8000880 <Thrust_Init+0x1ec>
  800084e:	4b19      	ldr	r3, [pc, #100]	; (80008b4 <Thrust_Init+0x220>)
@@ -645,7 +645,7 @@ void Thrust_Init(void){
  8000856:	4b17      	ldr	r3, [pc, #92]	; (80008b4 <Thrust_Init+0x220>)
  8000858:	681b      	ldr	r3, [r3, #0]
  800085a:	681a      	ldr	r2, [r3, #0]
- 800085c:	2364      	movs	r3, #100	; 0x64
+ 800085c:	2332      	movs	r3, #50	; 0x32
  800085e:	6413      	str	r3, [r2, #64]	; 0x40
  8000860:	e00e      	b.n	8000880 <Thrust_Init+0x1ec>
  8000862:	4b14      	ldr	r3, [pc, #80]	; (80008b4 <Thrust_Init+0x220>)
@@ -655,13 +655,13 @@ void Thrust_Init(void){
  800086a:	4b12      	ldr	r3, [pc, #72]	; (80008b4 <Thrust_Init+0x220>)
  800086c:	681b      	ldr	r3, [r3, #0]
  800086e:	681a      	ldr	r2, [r3, #0]
- 8000870:	2364      	movs	r3, #100	; 0x64
+ 8000870:	2332      	movs	r3, #50	; 0x32
  8000872:	6593      	str	r3, [r2, #88]	; 0x58
  8000874:	e004      	b.n	8000880 <Thrust_Init+0x1ec>
  8000876:	4b0f      	ldr	r3, [pc, #60]	; (80008b4 <Thrust_Init+0x220>)
  8000878:	681b      	ldr	r3, [r3, #0]
  800087a:	681a      	ldr	r2, [r3, #0]
- 800087c:	2364      	movs	r3, #100	; 0x64
+ 800087c:	2332      	movs	r3, #50	; 0x32
  800087e:	65d3      	str	r3, [r2, #92]	; 0x5c
 
 	HAL_Delay(1000);
@@ -675,7 +675,7 @@ void Thrust_Init(void){
  8000890:	4b07      	ldr	r3, [pc, #28]	; (80008b0 <Thrust_Init+0x21c>)
  8000892:	681b      	ldr	r3, [r3, #0]
  8000894:	681b      	ldr	r3, [r3, #0]
- 8000896:	2232      	movs	r2, #50	; 0x32
+ 8000896:	2264      	movs	r2, #100	; 0x64
  8000898:	635a      	str	r2, [r3, #52]	; 0x34
  800089a:	e030      	b.n	80008fe <Thrust_Init+0x26a>
  800089c:	4b04      	ldr	r3, [pc, #16]	; (80008b0 <Thrust_Init+0x21c>)
@@ -685,7 +685,7 @@ void Thrust_Init(void){
  80008a4:	4b02      	ldr	r3, [pc, #8]	; (80008b0 <Thrust_Init+0x21c>)
  80008a6:	681b      	ldr	r3, [r3, #0]
  80008a8:	681a      	ldr	r2, [r3, #0]
- 80008aa:	2332      	movs	r3, #50	; 0x32
+ 80008aa:	2364      	movs	r3, #100	; 0x64
  80008ac:	6393      	str	r3, [r2, #56]	; 0x38
  80008ae:	e026      	b.n	80008fe <Thrust_Init+0x26a>
  80008b0:	24000000 	.word	0x24000000
@@ -697,7 +697,7 @@ void Thrust_Init(void){
  80008c0:	4b2d      	ldr	r3, [pc, #180]	; (8000978 <Thrust_Init+0x2e4>)
  80008c2:	681b      	ldr	r3, [r3, #0]
  80008c4:	681a      	ldr	r2, [r3, #0]
- 80008c6:	2332      	movs	r3, #50	; 0x32
+ 80008c6:	2364      	movs	r3, #100	; 0x64
  80008c8:	63d3      	str	r3, [r2, #60]	; 0x3c
  80008ca:	e018      	b.n	80008fe <Thrust_Init+0x26a>
  80008cc:	4b2a      	ldr	r3, [pc, #168]	; (8000978 <Thrust_Init+0x2e4>)
@@ -707,7 +707,7 @@ void Thrust_Init(void){
  80008d4:	4b28      	ldr	r3, [pc, #160]	; (8000978 <Thrust_Init+0x2e4>)
  80008d6:	681b      	ldr	r3, [r3, #0]
  80008d8:	681a      	ldr	r2, [r3, #0]
- 80008da:	2332      	movs	r3, #50	; 0x32
+ 80008da:	2364      	movs	r3, #100	; 0x64
  80008dc:	6413      	str	r3, [r2, #64]	; 0x40
  80008de:	e00e      	b.n	80008fe <Thrust_Init+0x26a>
  80008e0:	4b25      	ldr	r3, [pc, #148]	; (8000978 <Thrust_Init+0x2e4>)
@@ -717,13 +717,13 @@ void Thrust_Init(void){
  80008e8:	4b23      	ldr	r3, [pc, #140]	; (8000978 <Thrust_Init+0x2e4>)
  80008ea:	681b      	ldr	r3, [r3, #0]
  80008ec:	681a      	ldr	r2, [r3, #0]
- 80008ee:	2332      	movs	r3, #50	; 0x32
+ 80008ee:	2364      	movs	r3, #100	; 0x64
  80008f0:	6593      	str	r3, [r2, #88]	; 0x58
  80008f2:	e004      	b.n	80008fe <Thrust_Init+0x26a>
  80008f4:	4b20      	ldr	r3, [pc, #128]	; (8000978 <Thrust_Init+0x2e4>)
  80008f6:	681b      	ldr	r3, [r3, #0]
  80008f8:	681a      	ldr	r2, [r3, #0]
- 80008fa:	2332      	movs	r3, #50	; 0x32
+ 80008fa:	2364      	movs	r3, #100	; 0x64
  80008fc:	65d3      	str	r3, [r2, #92]	; 0x5c
 	__HAL_TIM_SET_COMPARE(TIM_PROP_D.TIM, TIM_PROP_D.CHANNEL, MIN_Thrust);
  80008fe:	4b1f      	ldr	r3, [pc, #124]	; (800097c <Thrust_Init+0x2e8>)
@@ -733,7 +733,7 @@ void Thrust_Init(void){
  8000906:	4b1d      	ldr	r3, [pc, #116]	; (800097c <Thrust_Init+0x2e8>)
  8000908:	681b      	ldr	r3, [r3, #0]
  800090a:	681b      	ldr	r3, [r3, #0]
- 800090c:	2232      	movs	r2, #50	; 0x32
+ 800090c:	2264      	movs	r2, #100	; 0x64
  800090e:	635a      	str	r2, [r3, #52]	; 0x34
  8000910:	e02c      	b.n	800096c <Thrust_Init+0x2d8>
  8000912:	4b1a      	ldr	r3, [pc, #104]	; (800097c <Thrust_Init+0x2e8>)
@@ -743,7 +743,7 @@ void Thrust_Init(void){
  800091a:	4b18      	ldr	r3, [pc, #96]	; (800097c <Thrust_Init+0x2e8>)
  800091c:	681b      	ldr	r3, [r3, #0]
  800091e:	681a      	ldr	r2, [r3, #0]
- 8000920:	2332      	movs	r3, #50	; 0x32
+ 8000920:	2364      	movs	r3, #100	; 0x64
  8000922:	6393      	str	r3, [r2, #56]	; 0x38
  8000924:	e022      	b.n	800096c <Thrust_Init+0x2d8>
  8000926:	4b15      	ldr	r3, [pc, #84]	; (800097c <Thrust_Init+0x2e8>)
@@ -753,7 +753,7 @@ void Thrust_Init(void){
  800092e:	4b13      	ldr	r3, [pc, #76]	; (800097c <Thrust_Init+0x2e8>)
  8000930:	681b      	ldr	r3, [r3, #0]
  8000932:	681a      	ldr	r2, [r3, #0]
- 8000934:	2332      	movs	r3, #50	; 0x32
+ 8000934:	2364      	movs	r3, #100	; 0x64
  8000936:	63d3      	str	r3, [r2, #60]	; 0x3c
  8000938:	e018      	b.n	800096c <Thrust_Init+0x2d8>
  800093a:	4b10      	ldr	r3, [pc, #64]	; (800097c <Thrust_Init+0x2e8>)
@@ -763,7 +763,7 @@ void Thrust_Init(void){
  8000942:	4b0e      	ldr	r3, [pc, #56]	; (800097c <Thrust_Init+0x2e8>)
  8000944:	681b      	ldr	r3, [r3, #0]
  8000946:	681a      	ldr	r2, [r3, #0]
- 8000948:	2332      	movs	r3, #50	; 0x32
+ 8000948:	2364      	movs	r3, #100	; 0x64
  800094a:	6413      	str	r3, [r2, #64]	; 0x40
  800094c:	e00e      	b.n	800096c <Thrust_Init+0x2d8>
  800094e:	4b0b      	ldr	r3, [pc, #44]	; (800097c <Thrust_Init+0x2e8>)
@@ -773,13 +773,13 @@ void Thrust_Init(void){
  8000956:	4b09      	ldr	r3, [pc, #36]	; (800097c <Thrust_Init+0x2e8>)
  8000958:	681b      	ldr	r3, [r3, #0]
  800095a:	681a      	ldr	r2, [r3, #0]
- 800095c:	2332      	movs	r3, #50	; 0x32
+ 800095c:	2364      	movs	r3, #100	; 0x64
  800095e:	6593      	str	r3, [r2, #88]	; 0x58
  8000960:	e004      	b.n	800096c <Thrust_Init+0x2d8>
  8000962:	4b06      	ldr	r3, [pc, #24]	; (800097c <Thrust_Init+0x2e8>)
  8000964:	681b      	ldr	r3, [r3, #0]
  8000966:	681a      	ldr	r2, [r3, #0]
- 8000968:	2332      	movs	r3, #50	; 0x32
+ 8000968:	2364      	movs	r3, #100	; 0x64
  800096a:	65d3      	str	r3, [r2, #92]	; 0x5c
 	HAL_Delay(1000);
  800096c:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
@@ -819,10 +819,7 @@ void Process(commandMsg* message) {
  80009a4:	4619      	mov	r1, r3
  80009a6:	4804      	ldr	r0, [pc, #16]	; (80009b8 <Process+0x2c>)
  80009a8:	f000 f80a 	bl	80009c0 <AdjustThrust>
-    //AdjustAngle(&message->thrust,&message->angle);
-
-    //HAL_UART_Transmit(hRPICom.huartDebug, &message->thrust, 8, 10); //receive data from data buffer interrupt mode
-    //HAL_UART_Transmit(hRPICom.huartDebug, (uint8_t*)&message->angle, 16, 10);
+  //  AdjustAngle(&message->thrust,&message->angle);
 }
  80009ac:	bf00      	nop
  80009ae:	3708      	adds	r7, #8
@@ -841,7 +838,7 @@ void AdjustThrust(struct TIM_PROP* tim_prop, uint8_t thrust) {
  80009c6:	6078      	str	r0, [r7, #4]
  80009c8:	460b      	mov	r3, r1
  80009ca:	70fb      	strb	r3, [r7, #3]
-	float thrust_ms = thrust * ((float)(MAX_Thrust - MIN_Thrust) / 100.0) + MIN_Thrust;;
+	float thrust_ms = thrust * ((float)(MIN_Thrust - MAX_Thrust) / 100.0) + MIN_Thrust;;
  80009cc:	78fb      	ldrb	r3, [r7, #3]
  80009ce:	ee07 3a90 	vmov	s15, r3
  80009d2:	eeb8 7be7 	vcvt.f64.s32	d7, s15
@@ -937,7 +934,7 @@ void AdjustThrust(struct TIM_PROP* tim_prop, uint8_t thrust) {
  8000aa2:	4770      	bx	lr
  8000aa4:	f3af 8000 	nop.w
  8000aa8:	00000000 	.word	0x00000000
- 8000aac:	40490000 	.word	0x40490000
+ 8000aac:	40590000 	.word	0x40590000
 
 08000ab0 <RPICom_Init>:
 #include <RPICom.h>

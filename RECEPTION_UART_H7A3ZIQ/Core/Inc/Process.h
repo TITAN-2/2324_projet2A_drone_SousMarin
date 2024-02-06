@@ -13,8 +13,8 @@
 #include "stm32h7xx_hal_def.h"
 #include "usart.h"
 
-#define MIN_Thrust 50
-#define MAX_Thrust 100
+#define MIN_Thrust 100
+#define MAX_Thrust 50
 
 
 struct TIM_PROP{
