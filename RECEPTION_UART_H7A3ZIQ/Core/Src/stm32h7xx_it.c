@@ -42,7 +42,6 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-	extern uint64_t recvd_data;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -58,7 +57,6 @@
 /* External variables --------------------------------------------------------*/
 extern UART_HandleTypeDef huart4;
 /* USER CODE BEGIN EV */
-extern UART_HandleTypeDef huart3;
 
 
 /* USER CODE END EV */
