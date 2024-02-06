@@ -173,7 +173,6 @@
     )
   )
 
-
   (junction (at 133.35 77.47) (diameter 0) (color 0 0 0 0)
     (uuid f8e6cb3d-42a5-48ac-a2ea-5c8b24958287)
   )
@@ -256,7 +255,7 @@
   (symbol (lib_id "power:Earth") (at 128.27 77.47 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5369bdc0-0cbf-44de-b005-6b8dabf01fdd)
-    (property "Reference" "#PWR01" (at 121.92 77.47 0)
+    (property "Reference" "#PWR02" (at 121.92 77.47 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 124.46 77.47 0)
@@ -271,9 +270,6 @@
     (pin "1" (uuid 5db6af86-5971-42fa-9576-eb31a7fdc139))
     (instances
       (project "Capteurs_PCB"
-        (path "/1101af8f-9425-4102-9245-339dc54562bf"
-          (reference "#PWR01") (unit 1)
-        )
         (path "/1101af8f-9425-4102-9245-339dc54562bf/3d971057-5943-41d9-af92-399a5cf9d777"
           (reference "#PWR02") (unit 1)
         )
@@ -300,9 +296,6 @@
     (pin "2" (uuid 53544912-5af9-456a-b0f9-b1657cb1a2a4))
     (instances
       (project "Capteurs_PCB"
-        (path "/1101af8f-9425-4102-9245-339dc54562bf"
-          (reference "C1") (unit 1)
-        )
         (path "/1101af8f-9425-4102-9245-339dc54562bf/3d971057-5943-41d9-af92-399a5cf9d777"
           (reference "C1") (unit 1)
         )
@@ -313,7 +306,7 @@
   (symbol (lib_id "power:Earth") (at 133.35 116.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ac8dfc69-f267-4ea5-ac75-16961e17a825)
-    (property "Reference" "#PWR02" (at 133.35 123.19 0)
+    (property "Reference" "#PWR01" (at 133.35 123.19 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 133.35 120.65 0)
@@ -328,9 +321,6 @@
     (pin "1" (uuid 3d5be000-f0a8-420f-96ac-a76913899a8a))
     (instances
       (project "Capteurs_PCB"
-        (path "/1101af8f-9425-4102-9245-339dc54562bf"
-          (reference "#PWR02") (unit 1)
-        )
         (path "/1101af8f-9425-4102-9245-339dc54562bf/3d971057-5943-41d9-af92-399a5cf9d777"
           (reference "#PWR01") (unit 1)
         )

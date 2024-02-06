@@ -48,7 +48,13 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -165,8 +171,15 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
-      "via_dimensions": [],
+      "track_widths": [
+        0.0
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "layer_presets": [],
@@ -479,10 +492,6 @@
     [
       "3d971057-5943-41d9-af92-399a5cf9d777",
       "Capteur de Pression"
-    ],
-    [
-      "484fed71-765a-4020-a5ac-867b14a93f63",
-      "Microcontrolleur"
     ],
     [
       "b84a61ef-89d4-47b7-a16e-5e36daa53b0c",
