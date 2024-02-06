@@ -832,7 +832,6 @@
     )
   )
 
-
   (junction (at 137.16 46.99) (diameter 0) (color 0 0 0 0)
     (uuid 90c19749-4b03-4d30-be8b-fea70db96172)
   )
@@ -1107,9 +1106,6 @@
     (pin "9" (uuid 182af97c-deeb-4fd9-9657-284778525712))
     (instances
       (project "Capteurs_PCB"
-        (path "/1101af8f-9425-4102-9245-339dc54562bf"
-          (reference "U2") (unit 1)
-        )
         (path "/1101af8f-9425-4102-9245-339dc54562bf/484fed71-765a-4020-a5ac-867b14a93f63"
           (reference "U2") (unit 1)
         )
