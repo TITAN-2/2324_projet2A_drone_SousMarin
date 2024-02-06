@@ -13,6 +13,10 @@
 #include "stm32h7xx_hal_def.h"
 #include "usart.h"
 
+#define MIN_Thrust 50
+#define MAX_Thrust 100
+
+
 struct TIM_PROP{
 	TIM_HandleTypeDef* TIM;
 	uint32_t CHANNEL;

@@ -31,7 +31,8 @@ Core/Src/RPICom.o: ../Core/Src/RPICom.c ../Core/Inc/RPICom.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
- ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
+ ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+ ../Core/Inc/RPICom.h
 ../Core/Inc/RPICom.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/main.h:
@@ -67,3 +68,4 @@ Core/Src/RPICom.o: ../Core/Src/RPICom.c ../Core/Inc/RPICom.h \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
+../Core/Inc/RPICom.h:

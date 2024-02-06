@@ -1,5 +1,5 @@
 ../Core/Src/Process.c:10:6:Thrust_Init	8	static
-../Core/Src/Process.c:24:6:Process_Init	8	static
-../Core/Src/Process.c:28:6:Process	16	static
-../Core/Src/Process.c:37:6:AdjustThrust	16	static
-../Core/Src/Process.c:41:6:AdjustAngle	24	static
+../Core/Src/Process.c:27:6:Process_Init	8	static
+../Core/Src/Process.c:31:6:Process	16	static
+../Core/Src/Process.c:40:6:AdjustThrust	24	static
+../Core/Src/Process.c:45:6:AdjustAngle	24	static
