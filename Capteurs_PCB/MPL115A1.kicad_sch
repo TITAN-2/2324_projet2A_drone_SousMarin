@@ -165,6 +165,10 @@
     (stroke (width 0) (type default))
     (uuid acfaaea8-f65b-443d-a662-cfc845a53c54)
   )
+  (wire (pts (xy 125.73 77.47) (xy 128.27 77.47))
+    (stroke (width 0) (type default))
+    (uuid d952333a-0e33-4237-bf02-2e53cbcb2ea2)
+  )
 
   (hierarchical_label "SS" (shape input) (at 120.65 104.14 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
@@ -237,6 +241,31 @@
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf/3d971057-5943-41d9-af92-399a5cf9d777"
           (reference "#PWR02") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 125.73 77.47 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 80f03c6f-7b0a-44a0-856b-e7657964f4bf)
+    (property "Reference" "#PWR027" (at 119.38 77.47 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 121.92 78.105 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "" (at 125.73 77.47 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 125.73 77.47 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 9efdc64c-ef56-491d-8347-149383f45024))
+    (instances
+      (project "Capteurs_PCB"
+        (path "/1101af8f-9425-4102-9245-339dc54562bf/3d971057-5943-41d9-af92-399a5cf9d777"
+          (reference "#PWR027") (unit 1)
         )
       )
     )
