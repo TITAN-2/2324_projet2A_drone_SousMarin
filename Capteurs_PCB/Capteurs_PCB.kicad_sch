@@ -1435,7 +1435,6 @@
     )
   )
 
-
   (junction (at 147.32 91.44) (diameter 0) (color 0 0 0 0)
     (uuid 23e6dd71-ab54-42cf-ac96-672de2081459)
   )
@@ -1486,6 +1485,7 @@
   (no_connect (at 110.49 52.07) (uuid 40a95ae4-6f5f-4339-8535-dd4a6153e6a9))
   (no_connect (at 97.79 29.21) (uuid 47c7779f-a1c0-4437-9085-b7ba3aaa44d6))
   (no_connect (at 36.83 88.9) (uuid 4a828c0c-e9e6-48fc-90f9-5449bfab6c1c))
+  (no_connect (at 102.87 125.73) (uuid 5091e767-09f9-42ab-b5cf-4b4c88afb7f3))
   (no_connect (at 97.79 31.75) (uuid 51bbc2b4-4bc5-4ad2-a9ff-fa577aed3554))
   (no_connect (at 97.79 67.31) (uuid 522582f8-7b14-4008-a72f-b777db1ca949))
   (no_connect (at 110.49 46.99) (uuid 59614c68-cb3a-459e-9070-51ec2854ff69))
@@ -2549,31 +2549,6 @@
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf"
           (reference "H103") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:GND") (at 102.87 125.73 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 53117628-3d68-4508-9166-e159a2a2b7f1)
-    (property "Reference" "#PWR017" (at 102.87 132.08 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 102.87 130.81 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 102.87 125.73 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 102.87 125.73 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid e49b2769-842b-483a-acdd-0bedf400ae8d))
-    (instances
-      (project "Capteurs_PCB"
-        (path "/1101af8f-9425-4102-9245-339dc54562bf"
-          (reference "#PWR017") (unit 1)
         )
       )
     )
