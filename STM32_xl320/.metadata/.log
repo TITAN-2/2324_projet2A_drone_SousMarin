@@ -1,0 +1,16 @@
+!SESSION 2024-03-05 16:50:43.793 -----------------------------------------------
+eclipse.buildId=Version 1.12.0
+java.version=11.0.17
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -keyring /Users/maenacharbonnier/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/maenacharbonnier/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-03-05 16:53:12.027
+!MESSAGE Log4j2 initialized with config file /Users/maenacharbonnier/Documents/GitHub/2324_projet2A_drone_SousMarin/STM32_xl320/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-03-05 16:53:16.382
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-05 16:59:05.066
+!MESSAGE Indexed 'motorxl320' (19 sources, 80 headers) in 6.65 sec: 4,549 declarations; 19,864 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0082%)

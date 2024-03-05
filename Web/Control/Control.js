@@ -1,88 +1,59 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const joystickContainer = document.getElementById('joystick-container');
-    const joystickHandle = document.getElementById('joystick-handle');
-    
-    const joystickVertContainer = document.getElementById('joystick_vert-container');
-    const joystickVertHandle = document.getElementById('joystick_vert-handle');
+document.addEventListener("DOMContentLoaded", function () {
+    const joystick1 = document.getElementById("joystick1");
+    const joystick2 = document.getElementById("joystick2");
 
-    let isDragging = false;
+    let joystick1X = 0;
+    let joystick1Y = 0;
+    let joystick2X = 0;
+    let joystick2Y = 0;
 
-    joystickHandle.addEventListener('mousedown', startDrag);
-    document.addEventListener('mouseup', endDrag);
-    document.addEventListener('mousemove', drag);
+    joystick1.style.left = "20px";
+    joystick1.style.bottom = "20px";
 
-    joystickVertHandle.addEventListener('mousedown', startVertDrag);
-    document.addEventListener('mouseup', endVertDrag);
-    document.addEventListener('mousemove', vertDrag);
+    joystick2.style.right = "20px";
+    joystick2.style.bottom = "20px";
 
-    function startDrag(e) {
-        isDragging = true;
-        joystickHandle.setPointerCapture(e.pointerId);
+    joystick1.addEventListener("mousedown", startDrag1);
+    joystick2.addEventListener("mousedown", startDrag2);
+
+    function startDrag1(e) {
+        e.preventDefault();
+        document.addEventListener("mousemove", drag1);
+        document.addEventListener("mouseup", stopDrag1);
     }
 
-    function endDrag() {
-        isDragging = false;
-        resetJoystickPosition();
+    function startDrag2(e) {
+        e.preventDefault();
+        document.addEventListener("mousemove", drag2);
+        document.addEventListener("mouseup", stopDrag2);
     }
 
-    function drag(e) {
-        if (isDragging) {
-            const containerRect = joystickContainer.getBoundingClientRect();
-            const x = e.clientX - containerRect.left - containerRect.width / 2;
-            const y = e.clientY - containerRect.top - containerRect.height / 2;
-            const distance = Math.sqrt(x*x + y*y);
+    function drag1(e) {
+        joystick1X = e.clientX - 20;
+        joystick1Y = window.innerHeight - e.clientY - 20;
 
-            if (distance <= containerRect.width / 2) {
-                joystickHandle.style.transition = 'none';
-                joystickHandle.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
-            } else {
-                const angle = Math.atan2(y, x);
-                const maxX = Math.cos(angle) * (containerRect.width / 2);
-                const maxY = Math.sin(angle) * (containerRect.height / 2);
-
-                joystickHandle.style.transition = 'none';
-                joystickHandle.style.transform = `translate(-50%, -50%) translate(${maxX}px, ${maxY}px)`;
-            }
-        }
+        updateJoystickPosition(joystick1, joystick1X, joystick1Y);
     }
 
-    function resetJoystickPosition() {
-        joystickHandle.style.transition = 'transform 0.2s ease-out';
-        joystickHandle.style.transform = 'translate(-50%, -50%)';
+    function drag2(e) {
+        joystick2X = window.innerWidth - e.clientX - 20;
+        joystick2Y = window.innerHeight - e.clientY - 20;
+
+        updateJoystickPosition(joystick2, joystick2X, joystick2Y);
     }
 
-    // Joystick vertical functions
-
-    function startVertDrag(e) {
-        isDragging = true;
-        joystickVertHandle.setPointerCapture(e.pointerId);
+    function stopDrag1() {
+        document.removeEventListener("mousemove", drag1);
+        document.removeEventListener("mouseup", stopDrag1);
     }
 
-    function endVertDrag() {
-        isDragging = false;
-        resetVertJoystickPosition();
+    function stopDrag2() {
+        document.removeEventListener("mousemove", drag2);
+        document.removeEventListener("mouseup", stopDrag2);
     }
 
-    function vertDrag(e) {
-        if (isDragging) {
-            const vertContainerRect = joystickVertContainer.getBoundingClientRect();
-            const vertY = e.clientY - vertContainerRect.top - vertContainerRect.height / 2;
-            const vertDistance = Math.abs(vertY);
-
-            if (vertDistance <= vertContainerRect.height / 2) {
-                joystickVertHandle.style.transition = 'none';
-                joystickVertHandle.style.transform = `translate(-50%, -50%) translate(0px, ${vertY}px)`;
-            } else {
-                const vertMax = Math.sign(vertY) * (vertContainerRect.height / 2);
-
-                joystickVertHandle.style.transition = 'none';
-                joystickVertHandle.style.transform = `translate(-50%, -50%) translate(0px, ${vertMax}px)`;
-            }
-        }
-    }
-
-    function resetVertJoystickPosition() {
-        joystickVertHandle.style.transition = 'transform 0.2s ease-out';
-        joystickVertHandle.style.transform = 'translate(-50%, -50%)';
+    function updateJoystickPosition(joystick, x, y) {
+        joystick.style.left = x + "px";
+        joystick.style.bottom = y + "px";
     }
 });
