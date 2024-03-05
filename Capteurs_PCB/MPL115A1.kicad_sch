@@ -200,7 +200,7 @@
     (property "Value" "32350268" (at 142.24 103.505 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 134.62 66.04 0)
+    (property "Footprint" "Custom:Pressure_Captor_Custom" (at 134.62 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://prod-edam.honeywell.com/content/dam/honeywell-edam/sps/siot/en-us/products/sensors/pressure-sensors/board-mount-pressure-sensors/basic-abp2-series/documents/sps-siot-abp2-series-datasheet-32350268-en.pdf" (at 133.35 69.85 0)
