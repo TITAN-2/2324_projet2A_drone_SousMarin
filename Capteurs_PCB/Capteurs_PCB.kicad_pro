@@ -453,11 +453,39 @@
     "netclass_patterns": [
       {
         "netclass": "Power",
-        "pattern": ""
+        "pattern": "+3.3V"
       },
       {
-        "netclass": "Default",
-        "pattern": ""
+        "netclass": "Power",
+        "pattern": "+5.1V"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+7.4V"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "Vin"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "Vout"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "3.3VA"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VDD"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VDDA"
       }
     ]
   },
