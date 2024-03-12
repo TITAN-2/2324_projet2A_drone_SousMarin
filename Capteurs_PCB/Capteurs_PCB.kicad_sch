@@ -1397,58 +1397,6 @@
         )
       )
     )
-    (symbol "power:+7.5V" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
-      (property "Reference" "#PWR" (at 0 -3.81 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "+7.5V" (at 0 3.556 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "global power" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Power symbol creates a global label with name \"+7.5V\"" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "+7.5V_0_1"
-        (polyline
-          (pts
-            (xy -0.762 1.27)
-            (xy 0 2.54)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 0 0)
-            (xy 0 2.54)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 0 2.54)
-            (xy 0.762 1.27)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-      )
-      (symbol "+7.5V_1_1"
-        (pin power_in line (at 0 0 90) (length 0) hide
-          (name "+7.5V" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
     (symbol "power:+BATT" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
       (property "Reference" "#PWR" (at 0 -3.81 0)
         (effects (font (size 1.27 1.27)) hide)
@@ -1582,7 +1530,6 @@
       )
     )
   )
-
 
   (junction (at 147.32 91.44) (diameter 0) (color 0 0 0 0)
     (uuid 23e6dd71-ab54-42cf-ac96-672de2081459)
@@ -2896,31 +2843,6 @@
       (project "Capteurs_PCB"
         (path "/1101af8f-9425-4102-9245-339dc54562bf"
           (reference "#PWR022") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:+7.5V") (at 143.51 114.3 270) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 409a53a5-51cb-4424-b99d-f352a5932354)
-    (property "Reference" "#PWR0119" (at 139.7 114.3 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "+7.4V" (at 147.32 114.935 90)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "" (at 143.51 114.3 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 143.51 114.3 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 00e9f102-6e3d-472e-b4c0-2967d263dccf))
-    (instances
-      (project "Capteurs_PCB"
-        (path "/1101af8f-9425-4102-9245-339dc54562bf"
-          (reference "#PWR0119") (unit 1)
         )
       )
     )
@@ -4382,7 +4304,7 @@
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid 531f3895-c00a-458d-99fe-5b411e5bb894)
     )
-    (pin "7.4V" input (at 142.24 114.3 0)
+    (pin "12V" input (at 142.24 114.3 0)
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid e614bb1c-63b8-401a-944b-752031de6ca8)
     )
