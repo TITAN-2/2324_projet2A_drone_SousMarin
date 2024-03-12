@@ -160,3 +160,4 @@ function resetProfondeurValue() {
 function resetDirectionValue() {
     document.getElementById('direction-value').innerText = '0.0'; // Mettez la valeur par défaut selon vos besoins
 }
+    

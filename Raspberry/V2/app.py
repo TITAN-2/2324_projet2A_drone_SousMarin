@@ -1,13 +1,15 @@
-# /myflaskapp/app.py
+# /app/app.py
 
 from flask import Flask, render_template, Response, request
 from streaming.server import StreamingHandler, StreamingServer
 from streaming.camera import StreamingOutput
 import threading
-from picamera2 import Picamera2
+from picamera2 import Picamera2,Preview
 from picamera2.encoders import JpegEncoder
 from picamera2.outputs import FileOutput
 import serial  
+import RPi.GPIO as GPIO
+
 
 app = Flask(__name__)
 uart_port = serial.Serial('/dev/ttyS0', baudrate=115200, timeout=1)
@@ -28,26 +30,39 @@ def video_feed():
     return Response(generate(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
-# Fonction pour envoyer les données via UART
-def send_uart(command):
-    uart_port.write(command.encode())
-    uart_port.flush()
 
+
+def calculate_checksum_xor(data):
+    checksum = 0
+    for byte in data:
+        checksum ^= int(byte, 16)
+    return [format(checksum,"02X")]
 
 # Route pour la mise à jour des valeurs via UART
+paquetNumber = format(0x30,"02X")
+
 @app.route('/update_values', methods=['POST'])
 def update_values():
-    vitesse = request.form['vitesse']
-    profondeur = request.form['profondeur']
-    direction = request.form['direction']
+    global paquetNumber
+    try: 
+        vitesse = format(int(request.form['vitesse']),'02X')
+        direction = format(int(request.form['direction']),'02X')
+        profondeur = format(int(request.form['profondeur']),'02X')
+        # Construire la commande UART à partir des valeurs reçues
+        checkHeader= ["FF","FE"]
+        command = [vitesse,direction,profondeur,paquetNumber]
+        checkLength = [format(len(command)*2+1,'02X')]
+        checkSum = calculate_checksum_xor(checkHeader+checkLength+command)
 
-    # Construire la commande UART à partir des valeurs reçues
-    uart_command = f"V{vitesse}P{profondeur}D{direction}"
-
-    # Envoyer la commande via UART
-    send_uart(uart_command)
-
-    return 'Success'  # Réponse du serveur, peut être personnalisée
+        # Envoyer la commande via UART
+        uart_command ="".join(checkHeader+checkLength+command+checkSum)
+        uart_port.write(uart_command.encode("utf-8"))
+        uart_port.flush()
+        int(paquetNumber)+1
+        paquetNumber =format(int(paquetNumber,16)+1,"02X")
+        return f'Send Success {uart_command}'  # Réponse du serveur, peut être personnalisée
+    except Exception as e:
+        return f'Error: {str(e)}'
 
 picam2 = Picamera2()
 picam2.configure(picam2.create_video_configuration(main={"size": (640, 480)}))
