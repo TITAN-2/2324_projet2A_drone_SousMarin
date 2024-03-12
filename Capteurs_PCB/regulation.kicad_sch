@@ -465,6 +465,7 @@
     )
   )
 
+
   (junction (at 104.14 67.31) (diameter 0) (color 0 0 0 0)
     (uuid 004d516a-b1cb-4fd6-89e2-2956e94046af)
   )
@@ -962,7 +963,7 @@
     (uuid 67a8b089-461a-4db5-836e-cc827cba1aa2)
   )
 
-  (hierarchical_label "7.4V" (shape input) (at 185.42 64.77 90) (fields_autoplaced)
+  (hierarchical_label "7.5V" (shape input) (at 185.42 64.77 90) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 105819ae-e55d-4960-ae9b-24c65a867b4b)
   )
