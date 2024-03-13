@@ -6,12 +6,12 @@ var joysticks = [
         valueCommand : 0
     },
     { handle: document.getElementById('joystick-profondeur-handle'), container: document.getElementById('joystick-profondeur-container'), isDragging: false,
-        offsetY: 50, // Offset vertical spécifique pour ce joystick
+        offsetY: 0, // Offset vertical spécifique pour ce joystick
         orientation: 'vertical', // Orientation spécifique pour ce joystick
         valueCommand : 0
     },
     { handle: document.getElementById('joystick-direction-handle'), container: document.getElementById('joystick-direction-container'), isDragging: false,
-        offsetX: 50, // Offset horizontal spécifique pour ce joystick
+        offsetX: 0, // Offset horizontal spécifique pour ce joystick
         orientation: 'horizontal', // Orientation spécifique pour ce joystick
         valueCommand : 0
     }
@@ -50,22 +50,29 @@ document.addEventListener('mouseup', function () {
 });
 
 function updateJoystick(e, joystick) {
+    // Obtenir les dimensions du conteneur du joystick
     var containerRect = joystick.container.getBoundingClientRect();
-    var offsetX = 0;
-    var offsetY = 0;
-
-    if (joystick.orientation === 'vertical') {
-        offsetY = e.clientY - containerRect.top - containerRect.height / 2 + joystick.offsetY;
-    } else if (joystick.orientation === 'horizontal') {
-        offsetX = e.clientX - containerRect.left - containerRect.width / 2 + joystick.offsetX;
-    }
-
-    joystick.handle.style.transform = 'translate(' + offsetX + 'px, ' + offsetY + 'px)';
-
-    var value = calculateJoystickValue(joystick.container, joystick.handle);
-    document.getElementById(joystick.container.id.replace('-container', '-value')).innerText = value.toFixed(1);
-}
-
+    
+    // Calculer les nouvelles coordonnées du centre du joystick en fonction de la position de la souris
+    var handleWidth = joystick.handle.offsetWidth;
+    var handleHeight = joystick.handle.offsetHeight;
+    var centerX = e.clientX - containerRect.left;
+    var centerY = e.clientY - containerRect.top
+    
+    // Limiter les déplacements du joystick pour rester à l'intérieur du conteneur
+    centerX = Math.max(handleWidth/2, Math.min(containerRect.width - handleWidth/2, centerX));
+    centerY = Math.max(handleHeight/2, Math.min(containerRect.height - handleHeight/2, centerY));
+    // Mettre à jour la position du joystick
+    if (joystick.orientation === "vertical")
+        joystick.handle.style.top = centerY + 'px';
+    if (joystick.orientation === "horizontal")
+        joystick.handle.style.left = centerX + 'px';
+    // Calculer et afficher la valeur du joystick (à adapter en fonction de vos besoins)
+    var value = calculateJoystickValue(joystick);
+    joystick.valueCommand = value
+    document.getElementById(joystick.container.id.replace('-container', '-value')).innerText = value.toFixed(1);}
+    
+    
 function resetJoystick(joystick) {
     joystick.handle.style.transform = 'translate(-50%, -50%)';
 }
@@ -81,23 +88,28 @@ function resetJoysticks() {
     });
 }
 
-function calculateJoystickValue(container, handle) {
-    var containerRect = container.getBoundingClientRect();
-    var handleRect = handle.getBoundingClientRect();
+function calculateJoystickValue(joystick) {
+    var containerRect = joystick.container.getBoundingClientRect();
+    var joystickHandle = joystick.handle.getBoundingClientRect();
     var value;
 
     if (containerRect.height > containerRect.width) {
         // Vertical joystick
-        value = (handleRect.top - containerRect.top) / containerRect.height;
-        value = (0.8 - value) * 100 / 0.8;
+        var joystickPos =containerRect.bottom- joystickHandle.bottom;
+        var range = containerRect.height - joystickHandle.height;
+        value = (joystickPos / range) * 100;
     } else {
         // Horizontal joystick
-        value = (handleRect.left - containerRect.left) / containerRect.width;
-        value = value * 100 / 0.87 ;
+        var joystickPos = joystickHandle.left - containerRect.left;
+        var range = containerRect.width - joystickHandle.width;
+        value = (joystickPos / range) * 100;
     }
-
+    // On limite la valeur a 0-100
+    value = Math.min(Math.max(value, 0), 100);
+    
     return value;
 }
+
 
 function sendUart() {
     $.ajax({
