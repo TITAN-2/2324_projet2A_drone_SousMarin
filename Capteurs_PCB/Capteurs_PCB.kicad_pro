@@ -412,7 +412,7 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.3,
+        "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -422,7 +422,24 @@
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.3,
+        "track_width": 0.2,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.3,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "LSM6DSL",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6
@@ -443,6 +460,23 @@
         "via_diameter": 1.2,
         "via_drill": 0.6,
         "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "PowerAled",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -452,7 +486,7 @@
     "netclass_assignments": null,
     "netclass_patterns": [
       {
-        "netclass": "Power",
+        "netclass": "PowerAled",
         "pattern": "+3.3V"
       },
       {
@@ -460,7 +494,7 @@
         "pattern": "+5.1V"
       },
       {
-        "netclass": "Power",
+        "netclass": "PowerAled",
         "pattern": "GND"
       },
       {
@@ -486,6 +520,26 @@
       {
         "netclass": "Power",
         "pattern": "VDDA"
+      },
+      {
+        "netclass": "LSM6DSL",
+        "pattern": "INT1"
+      },
+      {
+        "netclass": "LSM6DSL",
+        "pattern": "INT2"
+      },
+      {
+        "netclass": "LSM6DSL",
+        "pattern": "MISO"
+      },
+      {
+        "netclass": "LSM6DSL",
+        "pattern": "MOSI"
+      },
+      {
+        "netclass": "LSM6DSL",
+        "pattern": "SCLK"
       }
     ]
   },
