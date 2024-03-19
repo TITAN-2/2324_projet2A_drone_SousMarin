@@ -7,19 +7,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         0000a160  080002b0  080002b0  000102b0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000104  0800a410  0800a410  0001a410  2**2
+  2 .rodata       00000100  0800a410  0800a410  0001a410  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM          00000008  0800a514  0800a514  0001a514  2**2
+  3 .ARM          00000008  0800a510  0800a510  0001a510  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  4 .init_array   00000004  0800a51c  0800a51c  0001a51c  2**2
+  4 .init_array   00000004  0800a518  0800a518  0001a518  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  5 .fini_array   00000004  0800a520  0800a520  0001a520  2**2
+  5 .fini_array   00000004  0800a51c  0800a51c  0001a51c  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .data         00000084  24000000  0800a524  00020000  2**2
+  6 .data         00000084  24000000  0800a520  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .bss          0000028c  24000084  0800a5a8  00020084  2**2
+  7 .bss          0000028c  24000084  0800a5a4  00020084  2**2
                   ALLOC
-  8 ._user_heap_stack 00000600  24000310  0800a5a8  00020310  2**0
+  8 ._user_heap_stack 00000600  24000310  0800a5a4  00020310  2**0
                   ALLOC
   9 .ARM.attributes 0000002e  00000000  00000000  00020084  2**0
                   CONTENTS, READONLY
@@ -33,13 +33,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  14 .debug_macro  00032201  00000000  00000000  0003dde8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_line   0001ab2a  00000000  00000000  0006ffe9  2**0
+ 15 .debug_line   0001ab28  00000000  00000000  0006ffe9  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_str    00140393  00000000  00000000  0008ab13  2**0
+ 16 .debug_str    00140393  00000000  00000000  0008ab11  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .comment      00000050  00000000  00000000  001caea6  2**0
+ 17 .comment      00000050  00000000  00000000  001caea4  2**0
                   CONTENTS, READONLY
- 18 .debug_frame  00004d10  00000000  00000000  001caef8  2**2
+ 18 .debug_frame  00004d10  00000000  00000000  001caef4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1225,7 +1225,7 @@ void RPICom_DecodeBinaryMessage(void)
 	}
 
 	//Response RPI
-	uint8_t stringLength = snprintf((char *)hRPICom.DebugBuffer, UART_RPI_DEBUG_BUFFER_SIZE, "[RECEPTION]\nPaquet: %u\r\nThrust: %u \ Angle: %u\r\nStatut: %c\r\n", hRPICom.binaryMessage.paquetNumber,hRPICom.binaryMessage.thrust,hRPICom.binaryMessage.angle,hRPICom.errorNumberRx);
+	uint8_t stringLength = snprintf((char *)hRPICom.DebugBuffer, UART_RPI_DEBUG_BUFFER_SIZE, "[RECEPTION]\nPaquet: %u\r\nThrust: %u\nAngle: %u\r\nStatut: %c\r\n", hRPICom.binaryMessage.paquetNumber,hRPICom.binaryMessage.thrust,hRPICom.binaryMessage.angle,hRPICom.errorNumberRx);
  8000c88:	4b18      	ldr	r3, [pc, #96]	; (8000cec <RPICom_DecodeBinaryMessage+0xd0>)
  8000c8a:	7adb      	ldrb	r3, [r3, #11]
  8000c8c:	4618      	mov	r0, r3
@@ -1296,7 +1296,7 @@ sendMsg acquireData(void){ //Factoriser surement dans un fichier AcquireData
  8000d06:	6078      	str	r0, [r7, #4]
 	sendMsg data;
 	//interroge inertielle
-	data.posX=10;
+	data.posX = 10;
  8000d08:	230a      	movs	r3, #10
  8000d0a:	723b      	strb	r3, [r7, #8]
 	data.posY = 20;
@@ -1418,7 +1418,7 @@ void RPICom_SendBinaryMessage(void){ //Declencher par TIM5_IT ttes les 1s
  8000dcc:	240000a0 	.word	0x240000a0
  8000dd0:	240000b8 	.word	0x240000b8
  8000dd4:	240000b5 	.word	0x240000b5
- 8000dd8:	0800a450 	.word	0x0800a450
+ 8000dd8:	0800a44c 	.word	0x0800a44c
  8000ddc:	240000f5 	.word	0x240000f5
 
 08000de0 <MX_GPIO_Init>:
@@ -1786,10 +1786,10 @@ int main(void)
 		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_0); //toggle the user led Green which is connected to GPIO PA5
  800106c:	e7f6      	b.n	800105c <main+0x48>
  800106e:	bf00      	nop
- 8001070:	0800a48c 	.word	0x0800a48c
+ 8001070:	0800a488 	.word	0x0800a488
  8001074:	24000268 	.word	0x24000268
  8001078:	240001d4 	.word	0x240001d4
- 800107c:	0800a49c 	.word	0x0800a49c
+ 800107c:	0800a498 	.word	0x0800a498
  8001080:	58020400 	.word	0x58020400
 
 08001084 <SystemClock_Config>:
@@ -3508,7 +3508,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  80019a4:	24000084 	.word	0x24000084
   ldr r2, =_sidata
- 80019a8:	0800a524 	.word	0x0800a524
+ 80019a8:	0800a520 	.word	0x0800a520
   ldr r2, =_sbss
  80019ac:	24000084 	.word	0x24000084
   ldr r4, =_ebss
@@ -3612,7 +3612,7 @@ HAL_StatusTypeDef HAL_Init(void)
  8001a1c:	46bd      	mov	sp, r7
  8001a1e:	bd80      	pop	{r7, pc}
  8001a20:	58024400 	.word	0x58024400
- 8001a24:	0800a4a8 	.word	0x0800a4a8
+ 8001a24:	0800a4a4 	.word	0x0800a4a4
  8001a28:	24000014 	.word	0x24000014
  8001a2c:	24000010 	.word	0x24000010
 
@@ -8433,7 +8433,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  8003840:	bd80      	pop	{r7, pc}
  8003842:	bf00      	nop
  8003844:	58024400 	.word	0x58024400
- 8003848:	0800a4a8 	.word	0x0800a4a8
+ 8003848:	0800a4a4 	.word	0x0800a4a4
  800384c:	24000014 	.word	0x24000014
  8003850:	24000010 	.word	0x24000010
  8003854:	24000018 	.word	0x24000018
@@ -8837,7 +8837,7 @@ uint32_t HAL_RCC_GetHCLKFreq(void)
  8003b98:	46bd      	mov	sp, r7
  8003b9a:	bd80      	pop	{r7, pc}
  8003b9c:	58024400 	.word	0x58024400
- 8003ba0:	0800a4a8 	.word	0x0800a4a8
+ 8003ba0:	0800a4a4 	.word	0x0800a4a4
  8003ba4:	24000014 	.word	0x24000014
  8003ba8:	24000010 	.word	0x24000010
 
@@ -8871,7 +8871,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8003bcc:	4618      	mov	r0, r3
  8003bce:	bd80      	pop	{r7, pc}
  8003bd0:	58024400 	.word	0x58024400
- 8003bd4:	0800a4a8 	.word	0x0800a4a8
+ 8003bd4:	0800a4a4 	.word	0x0800a4a4
 
 08003bd8 <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -8902,7 +8902,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  8003bf8:	4618      	mov	r0, r3
  8003bfa:	bd80      	pop	{r7, pc}
  8003bfc:	58024400 	.word	0x58024400
- 8003c00:	0800a4a8 	.word	0x0800a4a8
+ 8003c00:	0800a4a4 	.word	0x0800a4a4
 
 08003c04 <HAL_RCCEx_PeriphCLKConfig>:
   * (*) : Available on some STM32H7 lines only.
@@ -11843,7 +11843,7 @@ uint32_t HAL_RCCEx_GetD3PCLK1Freq(void)
  8004fa0:	4618      	mov	r0, r3
  8004fa2:	bd80      	pop	{r7, pc}
  8004fa4:	58024400 	.word	0x58024400
- 8004fa8:	0800a4a8 	.word	0x0800a4a8
+ 8004fa8:	0800a4a4 	.word	0x0800a4a4
 
 08004fac <HAL_RCCEx_GetPLL2ClockFreq>:
   *         right PLL2CLK value. Otherwise, any configuration based on this function will be incorrect.
@@ -19070,7 +19070,7 @@ HAL_StatusTypeDef UART_SetConfig(UART_HandleTypeDef *huart)
  8008004:	58000c00 	.word	0x58000c00
  8008008:	03d09000 	.word	0x03d09000
  800800c:	003d0900 	.word	0x003d0900
- 8008010:	0800a4b8 	.word	0x0800a4b8
+ 8008010:	0800a4b4 	.word	0x0800a4b4
       }
       else
       {
@@ -19452,7 +19452,7 @@ HAL_StatusTypeDef UART_SetConfig(UART_HandleTypeDef *huart)
         break;
  8008320:	e018      	b.n	8008354 <UART_SetConfig+0xc58>
  8008322:	bf00      	nop
- 8008324:	0800a4b8 	.word	0x0800a4b8
+ 8008324:	0800a4b4 	.word	0x0800a4b4
  8008328:	58024400 	.word	0x58024400
  800832c:	03d09000 	.word	0x03d09000
  8008330:	003d0900 	.word	0x003d0900
@@ -19560,7 +19560,7 @@ HAL_StatusTypeDef UART_SetConfig(UART_HandleTypeDef *huart)
  80083c4:	e8bd 8fb0 	ldmia.w	sp!, {r4, r5, r7, r8, r9, sl, fp, pc}
  80083c8:	03d09000 	.word	0x03d09000
  80083cc:	003d0900 	.word	0x003d0900
- 80083d0:	0800a4b8 	.word	0x0800a4b8
+ 80083d0:	0800a4b4 	.word	0x0800a4b4
 
 080083d4 <UART_AdvFeatureConfig>:
   * @brief Configure the UART peripheral advanced features.
@@ -23282,8 +23282,8 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8009a80:	f85d 7b04 	ldr.w	r7, [sp], #4
  8009a84:	4770      	bx	lr
  8009a86:	bf00      	nop
- 8009a88:	0800a4d0 	.word	0x0800a4d0
- 8009a8c:	0800a4d8 	.word	0x0800a4d8
+ 8009a88:	0800a4cc 	.word	0x0800a4cc
+ 8009a8c:	0800a4d4 	.word	0x0800a4d4
 
 08009a90 <__errno>:
  8009a90:	4b01      	ldr	r3, [pc, #4]	; (8009a98 <__errno+0x8>)
@@ -23318,10 +23318,10 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8009ace:	4798      	blx	r3
  8009ad0:	3601      	adds	r6, #1
  8009ad2:	e7f2      	b.n	8009aba <__libc_init_array+0x1e>
- 8009ad4:	0800a51c 	.word	0x0800a51c
- 8009ad8:	0800a51c 	.word	0x0800a51c
- 8009adc:	0800a51c 	.word	0x0800a51c
- 8009ae0:	0800a520 	.word	0x0800a520
+ 8009ad4:	0800a518 	.word	0x0800a518
+ 8009ad8:	0800a518 	.word	0x0800a518
+ 8009adc:	0800a518 	.word	0x0800a518
+ 8009ae0:	0800a51c 	.word	0x0800a51c
 
 08009ae4 <memset>:
  8009ae4:	4402      	add	r2, r0
@@ -23656,11 +23656,11 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8009df8:	f000 f87a 	bl	8009ef0 <_printf_i>
  8009dfc:	e7eb      	b.n	8009dd6 <_svfiprintf_r+0x1c2>
  8009dfe:	bf00      	nop
- 8009e00:	0800a4e0 	.word	0x0800a4e0
- 8009e04:	0800a4ea 	.word	0x0800a4ea
+ 8009e00:	0800a4dc 	.word	0x0800a4dc
+ 8009e04:	0800a4e6 	.word	0x0800a4e6
  8009e08:	00000000 	.word	0x00000000
  8009e0c:	08009b5d 	.word	0x08009b5d
- 8009e10:	0800a4e6 	.word	0x0800a4e6
+ 8009e10:	0800a4e2 	.word	0x0800a4e2
 
 08009e14 <_printf_common>:
  8009e14:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -23996,8 +23996,8 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  800a12c:	f104 0619 	add.w	r6, r4, #25
  800a130:	e7f5      	b.n	800a11e <_printf_i+0x22e>
  800a132:	bf00      	nop
- 800a134:	0800a4f1 	.word	0x0800a4f1
- 800a138:	0800a502 	.word	0x0800a502
+ 800a134:	0800a4ed 	.word	0x0800a4ed
+ 800a138:	0800a4fe 	.word	0x0800a4fe
 
 0800a13c <memcpy>:
  800a13c:	440a      	add	r2, r1

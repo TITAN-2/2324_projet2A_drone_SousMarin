@@ -46,7 +46,7 @@ void RPICom_DecodeBinaryMessage(void)
 	}
 
 	//Response RPI
-	uint8_t stringLength = snprintf((char *)hRPICom.DebugBuffer, UART_RPI_DEBUG_BUFFER_SIZE, "[RECEPTION]\nPaquet: %u\r\nThrust: %u \ Angle: %u\r\nStatut: %c\r\n", hRPICom.binaryMessage.paquetNumber,hRPICom.binaryMessage.thrust,hRPICom.binaryMessage.angle,hRPICom.errorNumberRx);
+	uint8_t stringLength = snprintf((char *)hRPICom.DebugBuffer, UART_RPI_DEBUG_BUFFER_SIZE, "[RECEPTION]\nPaquet: %u\r\nThrust: %u\nAngle: %u\r\nStatut: %c\r\n", hRPICom.binaryMessage.paquetNumber,hRPICom.binaryMessage.thrust,hRPICom.binaryMessage.angle,hRPICom.errorNumberRx);
 	hRPICom.DebugBuffer[UART_RPI_DEBUG_BUFFER_SIZE-1] = 0; //Securité de print
 	HAL_UART_Transmit(hRPICom.huartDebug, hRPICom.DebugBuffer, stringLength, 10);
 
@@ -62,7 +62,7 @@ void RPICom_DecodeBinaryMessage(void)
 sendMsg acquireData(void){ //Factoriser surement dans un fichier AcquireData
 	sendMsg data;
 	//interroge inertielle
-	data.posX=10;
+	data.posX = 10;
 	data.posY = 20;
 	data.angleDelta = 1;
 	//interroge capteur temp
