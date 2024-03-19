@@ -11,7 +11,7 @@
 #include "usart.h"
 #include "RPICom.h"
 
-#define UART_RPI_RX_BUFFER_SIZE 9
+#define UART_RPI_RX_BUFFER_SIZE 8
 #define UART_RPI_TX_BUFFER_SIZE 64
 #define HEADER_CheckValue1 0xFF
 #define HEADER_CheckValue2 0xFE
@@ -20,7 +20,7 @@
 typedef struct {
     uint8_t thrust;
     int8_t angle;
-    uint16_t depth;
+    uint8_t depth;
     uint8_t paquetNumber;
 } commandMsg;
 

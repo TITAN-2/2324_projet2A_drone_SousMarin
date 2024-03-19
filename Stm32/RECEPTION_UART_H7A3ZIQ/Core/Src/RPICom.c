@@ -38,16 +38,16 @@ void RPICom_DecodeBinaryMessage(void)
 	}
 	hRPICom.binaryMessage.thrust = hRPICom.RxBuffer[3];
 	hRPICom.binaryMessage.angle = hRPICom.RxBuffer[4];
-	hRPICom.binaryMessage.depth = ((uint16_t)hRPICom.RxBuffer[5]+(uint16_t)(hRPICom.RxBuffer[6]<<8));
-	hRPICom.binaryMessage.paquetNumber = hRPICom.RxBuffer[7];
+	hRPICom.binaryMessage.depth = hRPICom.RxBuffer[5];
+	hRPICom.binaryMessage.paquetNumber = hRPICom.RxBuffer[6];
 
 	//Checksum
-	if(checkSum() !=  hRPICom.RxBuffer[8]){
+	if(checkSum() !=  hRPICom.RxBuffer[7]){
 		hRPICom.errorNumber='3';
 	}
 
 	//Response RPI
-	uint8_t stringLength = snprintf((char *)hRPICom.TxBuffer, UART_RPI_TX_BUFFER_SIZE, "Paquet: %u\r\nThrust: %u\r\nStatut: %c\r\n", hRPICom.binaryMessage.paquetNumber,hRPICom.binaryMessage.thrust,hRPICom.errorNumber);
+	uint8_t stringLength = snprintf((char *)hRPICom.TxBuffer, UART_RPI_TX_BUFFER_SIZE, "Paquet: %u\r\nThrust: %u \ Angle: %u\r\nStatut: %c\r\n", hRPICom.binaryMessage.paquetNumber,hRPICom.binaryMessage.thrust,hRPICom.binaryMessage.angle,hRPICom.errorNumber);
 	hRPICom.TxBuffer[UART_RPI_TX_BUFFER_SIZE-1] = 0; //Securité de print
 	HAL_UART_Transmit(hRPICom.huartDebug, hRPICom.TxBuffer, stringLength, 10);
 
