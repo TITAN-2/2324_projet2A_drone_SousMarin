@@ -27,7 +27,7 @@ struct TIM_PROP TIM_PROP_D={&htim2,TIM_CHANNEL_2};
 
 
 void Thrust_Init(void);
-void Process(commandMsg* message);
+void Process(receiveMsg* message);
 void Process_Init(void);
 void AdjustThrust(struct TIM_PROP* tim_prop ,uint8_t thrust);
 void AdjustAngle(uint8_t thrust,int8_t angle);

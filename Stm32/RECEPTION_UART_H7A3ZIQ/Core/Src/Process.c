@@ -28,7 +28,7 @@ void Process_Init(void){
 	Thrust_Init();
 }
 
-void Process(commandMsg* message) {
+void Process(receiveMsg* message) {
     AdjustThrust(&TIM_PROP_G, message->thrust);
     AdjustThrust(&TIM_PROP_D, message->thrust);
     AdjustAngle(message->thrust,message->angle);

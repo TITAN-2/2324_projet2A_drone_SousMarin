@@ -66,7 +66,9 @@ void MX_UART4_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN UART4_Init 2 */
-
+  // Activation de l'interruption de transmission de l'UART4
+  HAL_NVIC_SetPriority(UART4_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(UART4_IRQn);
   /* USER CODE END UART4_Init 2 */
 
 }
@@ -255,4 +257,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		RPICom_UartActivate(&hRPICom);
 	}
 }
+
+
 /* USER CODE END 1 */
