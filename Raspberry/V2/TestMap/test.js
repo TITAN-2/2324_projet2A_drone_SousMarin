@@ -167,4 +167,4 @@ function drawMarker(x, y) {
 }
 
 // Appel de la fonction updatePosition toutes les 3 secondes
-setInterval(updatePosition, 2);
+setInterval(updatePosition, 100);
