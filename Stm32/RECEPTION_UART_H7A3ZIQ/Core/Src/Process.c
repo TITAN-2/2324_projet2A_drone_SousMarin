@@ -32,6 +32,7 @@ void Process(receiveMsg* message) {
     AdjustThrust(&TIM_PROP_G, message->thrust);
     AdjustThrust(&TIM_PROP_D, message->thrust);
     AdjustAngle(message->thrust,message->angle);
+    //ActivationMoteur(message->depth)
 }
 
 void AdjustThrust(struct TIM_PROP* tim_prop, uint8_t thrust) {

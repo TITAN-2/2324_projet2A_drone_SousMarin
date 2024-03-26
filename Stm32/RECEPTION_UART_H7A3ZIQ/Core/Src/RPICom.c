@@ -9,6 +9,8 @@ void RPICom_Init(UART_HandleTypeDef* huart, UART_HandleTypeDef* huartDebug){
 	memcpy(hRPICom.RxBuffer, NULL, UART_RPI_RX_BUFFER_SIZE);
 	memcpy(hRPICom.TxBuffer, NULL, UART_RPI_TX_BUFFER_SIZE);
 	memcpy(hRPICom.DebugBuffer, NULL, UART_RPI_DEBUG_BUFFER_SIZE);
+	hRPICom.sendMessage.paquetNumber = 0;
+
 	RPICom_UartActivate(&hRPICom);
 }
 
@@ -18,7 +20,7 @@ void RPICom_UartActivate(RPICom_HandleTypeDef* hRPI){
 
 uint8_t checkSum(uint8_t buffer[],uint8_t buffer_size){
 	uint8_t checkSum = 0;
-	for (int i = 0; i < buffer_size-1; i++) { //Il ne faut pas prendre en compte le bit ou checkSum est present
+	for (int i = 0; i < buffer_size; i++) { //Il ne faut pas prendre en compte le bit ou checkSum est present
 		checkSum ^= buffer[i];
 	}
 	return checkSum;
@@ -59,34 +61,32 @@ void RPICom_DecodeBinaryMessage(void)
 	}
 	RPICom_UartActivate(&hRPICom);
 }
-sendMsg acquireData(void){ //Factoriser surement dans un fichier AcquireData
-	sendMsg data;
+void acquireData(void){ //Factoriser surement dans un fichier AcquireData
 	//interroge inertielle
-	data.posX = 10;
-	data.posY = 20;
-	data.angleDelta = 1;
+	 hRPICom.sendMessage.posX = 10;
+	 hRPICom.sendMessage.posY = 20;
+	 hRPICom.sendMessage.angleDelta = 1;
 	//interroge capteur temp
-	data.temp = 25;
+	 hRPICom.sendMessage.temp = 25;
 	//interroge batterie
-	data.batteryPower = 90;
-	data.paquetNumber = 0;
-	return  data;
+	 hRPICom.sendMessage.batteryPower = 90;
+	 hRPICom.sendMessage.paquetNumber+=1;
+
 }
-void RPICom_SendBinaryMessage(void){ //Declencher par TIM5_IT ttes les 1s
-	sendMsg messageData = acquireData();
+void RPICom_SendBinaryMessage(void){ //Declencher par TIM3_IT ttes les 1s
+	acquireData();
 	hRPICom.TxBuffer[0]=HEADER_CheckValue1;
 	hRPICom.TxBuffer[1]=HEADER_CheckValue2;
 	hRPICom.TxBuffer[2]=UART_RPI_TX_BUFFER_SIZE;
 
-	memcpy(hRPICom.TxBuffer + 3, &messageData, sizeof(messageData));
+	memcpy(hRPICom.TxBuffer + 3, &hRPICom.sendMessage, sizeof(hRPICom.sendMessage));
 
-	hRPICom.TxBuffer[9]=checkSum(hRPICom.TxBuffer,sizeof(messageData)+3);
+	hRPICom.TxBuffer[9]=checkSum(hRPICom.TxBuffer,sizeof(hRPICom.sendMessage)+3);
 
 	HAL_UART_Transmit_IT(hRPICom.huart, hRPICom.TxBuffer, UART_RPI_TX_BUFFER_SIZE);
 	//Response RPI
-	uint8_t stringLength = snprintf((char *)hRPICom.DebugBuffer, UART_RPI_DEBUG_BUFFER_SIZE, "[SEND]\nPaquet: %u\r\nBatteryPower: %u \nPosition: %u-%u-%u°\r\n", messageData.paquetNumber,messageData.batteryPower,messageData.posX,messageData.posY,messageData.angleDelta);
+	uint8_t stringLength = snprintf((char *)hRPICom.DebugBuffer, UART_RPI_DEBUG_BUFFER_SIZE, "[SEND]\nPaquet: %u\r\nBatteryPower: %u\nPosition: %u-%u-%u°\r\nMessage transmis: %x\n", hRPICom.sendMessage.paquetNumber,hRPICom.sendMessage.batteryPower,hRPICom.sendMessage.posX,hRPICom.sendMessage.posY,hRPICom.sendMessage.angleDelta,hRPICom.sendMessage);
 	hRPICom.DebugBuffer[UART_RPI_DEBUG_BUFFER_SIZE-1] = 0; //Securité de print
 	HAL_UART_Transmit(hRPICom.huartDebug, hRPICom.DebugBuffer, stringLength, 10);
-
 }
 
