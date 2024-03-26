@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "tim.h"
 #include "usart.h"
 #include "usb_otg.h"
@@ -26,6 +27,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <RPICom.h>
+#include "dynamixel_protocol2.h"
+#include "dynamixel_xl320.h"
 
 /* USER CODE END Includes */
 
@@ -89,14 +92,16 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART3_UART_Init();
+  MX_DMA_Init();
   MX_USB_OTG_HS_USB_Init();
   MX_UART4_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
+  MX_USART3_UART_Init();
+  MX_UART5_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  	  HAL_TIM_Base_Start_IT(&htim3);
-
+  	HAL_TIM_Base_Start_IT(&htim3);
 	HAL_UART_Transmit(&huart3, (uint8_t *)"\nStarting...\r\n", 14, 10);
 	Process_Init();
 	RPICom_Init(&huart4, &huart3);
@@ -106,10 +111,12 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	uint8_t pos = 0;
 	while (1)
 	{
-		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_0); //toggle the user led Green which is connected to GPIO PA5
-		HAL_Delay(500); //delay 500 millisecond
+		XL320_set_pos(&huart2, pos);
+		pos=pos+100;
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

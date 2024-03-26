@@ -1,5 +1,8 @@
 "./Core/Src/Process.o"
 "./Core/Src/RPICom.o"
+"./Core/Src/dma.o"
+"./Core/Src/dynamixel_protocol2.o"
+"./Core/Src/dynamixel_xl320.o"
 "./Core/Src/gpio.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32h7xx_hal_msp.o"
