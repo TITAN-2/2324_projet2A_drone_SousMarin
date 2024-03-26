@@ -12,7 +12,8 @@ $(document).ready(function() {
         $('#vitesse-value').text(vitesseValue);
         $('#profondeur-value').text(profondeurValue);
         $('#direction-value').text(directionValue);
-
+        
+        
         // Vous pouvez ajouter ici la logique d'envoi des valeurs via UART
         // en utilisant RPICom.js ou tout autre moyen nécessaire.
         // Par exemple, envoi d'une requête AJAX au serveur Flask.

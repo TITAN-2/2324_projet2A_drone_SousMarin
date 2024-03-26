@@ -1,4 +1,0 @@
-../Core/Src/RPICom.c:6:6:RPICom_Init	24	static
-../Core/Src/RPICom.c:16:6:RPICom_UartActivate	16	static
-../Core/Src/RPICom.c:20:9:checkSum	16	static
-../Core/Src/RPICom.c:28:6:RPICom_DecodeBinaryMessage	24	static

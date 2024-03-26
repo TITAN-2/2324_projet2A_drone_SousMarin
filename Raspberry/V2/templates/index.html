@@ -20,12 +20,12 @@
         <div id="joystick-direction-handle"></div>
     </div>
     <div id="joystick-values">
-        <p>Vitesse: <span id="vitesse-value">0</span></p>
-        <p>Profondeur: <span id="profondeur-value">0</span></p>
-        <p>Direction: <span id="direction-value">0</span></p>
+        <p>Vitesse: <span id="joystick-vitesse-value">0</span></p>
+        <p>Profondeur: <span id="joystick-profondeur-value">0</span></p>
+        <p>Direction: <span id="joystick-direction-value">0</span></p>
     </div>
-    <script src="{{ url_for('static', filename='js/control.js') }}"></script>
     <script src="{{ url_for('static', filename='js/RPICom.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/control_V2.js') }}"></script>
     <img src="{{ url_for('video_feed') }}" width="640" height="480">
 </body>
 </html>
