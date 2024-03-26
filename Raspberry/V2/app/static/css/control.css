@@ -1,6 +1,8 @@
 body {
     margin: 0;
-    overflow: hidden; /* Pour Ã©viter le dÃ©filement de la page */
+    overflow: hidden; /* Pour éviter le défilement de la page */
+    background-color: black;
+    color: white; /* Facultatif : changer la couleur du texte pour qu'il soit visible sur fond noir */
 }
 
 #joystick-profondeur-container {
@@ -12,8 +14,8 @@ body {
     border-bottom-left-radius: 25px; /* Ajustez la valeur pour changer le rayon */
     border-bottom-right-radius: 25px; /* Ajustez la valeur pour changer le rayon */
     position: fixed;
-    bottom: 100px; /* Ajustez la distance par rapport au bas de la page */
-    left: 100px; /* Ajustez la distance par rapport Ã  la droite de la page */
+    bottom: 50px; /* Ajustez la distance par rapport au bas de la page */
+    left: 50px; /* Ajustez la distance par rapport à la droite de la page */
 }
 
 #joystick-profondeur-handle {
@@ -37,8 +39,8 @@ body {
     border-bottom-left-radius: 25px; /* Ajustez la valeur pour changer le rayon */
     border-bottom-right-radius: 25px; /* Ajustez la valeur pour changer le rayon */
     position: fixed;
-    bottom: 100px; /* Ajustez la distance par rapport au bas de la page */
-    left: 200px; /* Ajustez la distance par rapport Ã  la droite de la page */
+    bottom: 50px; /* Ajustez la distance par rapport au bas de la page */
+    left: 150px; /* Ajustez la distance par rapport à la droite de la page */
 }
 
 #joystick-vitesse-handle {
@@ -62,8 +64,8 @@ body {
     border-bottom-left-radius: 25px; /* Ajustez la valeur pour changer le rayon */
     border-bottom-right-radius: 25px; /* Ajustez la valeur pour changer le rayon */
     position: fixed;
-    right: 150px; /* Ajustez la distance par rapport au bas de la page */
-    bottom: 100px; /* Ajustez la distance par rapport Ã  la droite de la page */
+    right: 100px; /* Ajustez la distance par rapport au bas de la page */
+    bottom: 50px; /* Ajustez la distance par rapport à la droite de la page */
 }
 
 #joystick-direction-handle {
@@ -84,12 +86,37 @@ body {
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Centre horizontalement */
     text-align: center; /* Centrer le texte horizontalement */
-    display: flex; /* Utiliser le modÃ¨le de boÃ®te flexible */
+    display: flex; /* Utiliser le modèle de boîte flexible */
 }
 
 #joystick-values p {
     margin: 0 20px; /* Marge entre chaque compteur */
 }
+
+#capteurs {
+    position: fixed;
+    top: 50%; /* Ajustez la distance par rapport au haut de la page */
+    left: 80%; /* Centre horizontalement */
+    transform: translateY(-50%); /* Centre verticalement */
+    display: flex; /* Utiliser le modèle de boîte flexible */
+    flex-direction: column; /* Aligner les éléments verticalement */
+    align-items: center; /* Centrer horizontalement les éléments enfants */
+}
+
+.capteur {
+    margin: 10px 0; /* Ajouter de l'espace entre les capteurs */
+    text-align: center; /* Centrer le texte horizontalement */
+}
+
+.centered-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Mettre l'élément au niveau le plus bas */
+}
+
+
 
 
 
@@ -97,7 +124,7 @@ body {
 #map {
     width: 300px;
     height: 300px;
-    background-color: #f0f0f0;
+    background-color: #7d7c7c;
     position: absolute;
     top: 20px; /* Distance par rapport au haut de la fenêtre */
     left: 20px; /* Distance par rapport à la gauche de la fenêtre */

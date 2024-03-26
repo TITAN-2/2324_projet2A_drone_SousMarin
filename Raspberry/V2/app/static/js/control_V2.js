@@ -17,6 +17,17 @@ var joysticks = [
     }
 ];
 
+// main.js
+import donnees from './data.js';
+
+var positionX = donnees.posX;
+var positionY = donnees.posY;
+var batt = donnees.baterryPower;
+var temp = donnees.temperature;
+
+
+
+
 // Réinitialisation des valeurs des joysticks
 resetJoysticks();
 
@@ -42,7 +53,7 @@ document.addEventListener('mouseup', function () {
         if (joystick.isDragging) {
             joystick.isDragging = false;
             joystick.container.style.transition = 'all 0.3s ease';
-            //resetJoystick(joystick);
+            resetJoystick(joystick);
             //resetValue(joystick);
             sendUart();
         }
@@ -69,8 +80,9 @@ function updateJoystick(e, joystick) {
         joystick.handle.style.left = centerX + 'px';
     // Calculer et afficher la valeur du joystick (à adapter en fonction de vos besoins)
     var value = calculateJoystickValue(joystick);
-    joystick.valueCommand = value
-    document.getElementById(joystick.container.id.replace('-container', '-value')).innerText = value.toFixed(1);}
+    joystick.valueCommand = Math.round(value);
+    document.getElementById(joystick.container.id.replace('-container', '-value')).value = value.toFixed(1);
+}
     
     
 function resetJoystick(joystick) {
@@ -88,10 +100,13 @@ function resetJoysticks() {
     });
 }
 
+
+
 function calculateJoystickValue(joystick) {
     var containerRect = joystick.container.getBoundingClientRect();
     var joystickHandle = joystick.handle.getBoundingClientRect();
     var value;
+
 
     if (containerRect.height > containerRect.width) {
         // Vertical joystick
@@ -106,7 +121,7 @@ function calculateJoystickValue(joystick) {
     }
     // On limite la valeur a 0-100
     value = Math.min(Math.max(value, 0), 100);
-    
+
     return value;
 }
 
@@ -147,10 +162,14 @@ function generatePosition() {
 var position = generatePosition();
 
 // Fonction pour afficher la position et la tracer sur la carte
-function updatePosition() {
+function updateData() {
     position = generatePosition();
-    console.log("Nouvelle position:", position);
-    drawMarker(position.x, position.y);
+    drawMarker(positionX, positionY);
+    var temperatureElement = document.getElementById("temperature-value");
+    var batterieElement = document.getElementById("batterie-value");
+    temperatureElement.textContent = temp + " °C";
+    batterieElement.textContent = batt + "%";
+
 }
 
 // Fonction pour tracer un marqueur sur la carte
@@ -167,4 +186,14 @@ function drawMarker(x, y) {
 }
 
 // Appel de la fonction updatePosition toutes les 3 secondes
-setInterval(updatePosition, 100);
+setInterval(updateData, 2000);
+
+
+
+// Sélectionner les éléments HTML correspondants
+//var temperatureElement = document.getElementById("temperature-value");
+//var batterieElement = document.getElementById("batterie-value");
+
+// Mettre à jour le contenu des éléments avec les nouvelles valeurs
+//temperatureElement.textContent = temp + " °C";
+//batterieElement.textContent = batt + "%";

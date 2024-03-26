@@ -1,0 +1,41 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/control.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+    <div id="map"></div>
+    <div class="trait-horizontal"></div>
+    <div class="trait-vertical"></div>
+
+    <div id="joystick-vitesse-container">
+        <div id="joystick-vitesse-handle"></div>
+    </div>
+    <div id="joystick-profondeur-container">
+        <div id="joystick-profondeur-handle"></div>
+    </div>
+    <div id="joystick-direction-container">
+        <div id="joystick-direction-handle"></div>
+    </div>
+    <div id="capteurs">
+        <p>Batterie: <span id="batterie-value">--</span></p>
+        <p>Température: <span id="temperature-value">--</span></p>
+    </div>
+    <div id="joystick-values">
+        <p>Profondeur: <meter id="joystick-profondeur-value" min="0" max="100" value="50">0</meter></p>
+        <p>Vitesse: <meter id="joystick-vitesse-value" min="0" max="100" value="0">0</meter></p>
+        <p>Direction: <meter id="joystick-direction-value" min="0" max="100" value="50">0</meter></p>
+    </div>
+    <script src="{{ url_for('static', filename='js/RPICom.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/control_V2.js') }}"></script>
+    <div id="video-container"></div>
+        <img src="{{ url_for('video_feed') }}" class="centered-image" width="800" height="600">
+    </div>
+</body>
+</html>
