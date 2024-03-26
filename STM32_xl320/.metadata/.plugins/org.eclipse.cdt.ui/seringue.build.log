@@ -1,0 +1,10 @@
+17:14:36 **** Incremental Build of configuration Debug for project seringue ****
+make -j3 all 
+arm-none-eabi-size   seringue.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12300	     20	   1700	  14020	   36c4	seringue.elf
+Finished building: default.size.stdout
+ 
+
+17:14:36 Build Finished. 0 errors, 0 warnings. (took 381ms)
+

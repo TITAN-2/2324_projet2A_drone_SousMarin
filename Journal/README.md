@@ -54,3 +54,18 @@ Début d'avancée sur le flux vidéo. Problème : frame = None alors qu'il devra
 
 À faire : corriger cette erreur pour obtenir la vidéo.
 
+23/01/2024:
+La vidéo est réglée
+La communication UART entre Raspberry et STM32 est réussie
+Le PCB est en cours de réalisation pour régler les cpateurs et la communication entre les composants
+Le mouvement à l'intérieur des seringues est en cours de réalisation, pour gérer la profondeur du Sous Marin.
+Il reste à faire:
+1- Finir le PCB
+2- Finir les mouvements à l'intérieur des seringues
+3- Une fois fini faire le code des capteurs pour le faire apparaitre sur le site web
+4- Gérer la propulsion lorsque qu'on modifie les joysticks (Lien entre Joystick -> Raspberry -> STM32-> Propulseurs)
+5- Gérer la profondeur en modifiant les joysticks (Lien entre Joystick-> Raspberry -> STM32 ->Moteur Seringues)
+6- Gérer les batteries, Création batterie (BSM, Relier toutes les cellules entre elles)
+7- Tout mettre dans le Sous-Marin
+8- Mettre les billes de plombs
+9- Lien entre le sous marin et dehors (Lapin)

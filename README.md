@@ -41,4 +41,6 @@ Le drone sera équipé de capteurs de pression et d'une centrale inertielle, con
 1. Cloner le dépôt du projet sur la machine hôte.
    ```bash
    git clone https://github.com/votre-utilisateur/projet-drone-sous-marin.git
+## Tester les parties indépendemments
 
+[LA RECEPTION STM32](/RECEPTION_UART_H7A3ZIQ/HOWTO.md)
