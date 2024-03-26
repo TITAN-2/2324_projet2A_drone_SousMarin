@@ -33,7 +33,8 @@ Core/Src/Process.o: ../Core/Src/Process.c ../Core/Inc/Process.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
  ../Core/Inc/tim.h \
- ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h
+ ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
+ ../Core/Inc/dynamixel_protocol2.h ../Core/Inc/dynamixel_xl320.h
 ../Core/Inc/Process.h:
 ../Core/Inc/RPICom.h:
 ../Core/Inc/usart.h:
@@ -72,3 +73,5 @@ Core/Src/Process.o: ../Core/Src/Process.c ../Core/Inc/Process.h \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
 ../Core/Inc/tim.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h:
+../Core/Inc/dynamixel_protocol2.h:
+../Core/Inc/dynamixel_xl320.h:

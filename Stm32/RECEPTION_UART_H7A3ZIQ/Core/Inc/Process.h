@@ -12,23 +12,39 @@
 #include "tim.h"
 #include "stm32h7xx_hal_def.h"
 #include "usart.h"
+#include "dynamixel_protocol2.h"
+#include "dynamixel_xl320.h"
 
 #define MIN_Thrust 100
 #define MAX_Thrust 50
 
 
-struct TIM_PROP{
+typedef struct {
 	TIM_HandleTypeDef* TIM;
 	uint32_t CHANNEL;
-};
-
-struct TIM_PROP TIM_PROP_G ={&htim2,TIM_CHANNEL_1};
-struct TIM_PROP TIM_PROP_D={&htim2,TIM_CHANNEL_2};
+}TIM_PROP;
 
 
+typedef struct {
+	UART_HandleTypeDef* huartXL;
+	uint8_t id;
+	uint8_t pos;
+}XL_DEF;
+typedef struct{
+	XL_DEF* XL_Front;
+	XL_DEF*	XL_Back;
+}XL_Network;
+
+TIM_PROP TIM_PROP_G = {&htim2,TIM_CHANNEL_1};
+TIM_PROP TIM_PROP_D = {&htim2,TIM_CHANNEL_2};
+XL_DEF XL_Front  = {&huart2,1,0};
+XL_DEF XL_Back = {&huart2,2,0};
+XL_Network XL_Net = {&XL_Front,&XL_Back};
 void Thrust_Init(void);
+void Depth_Init(void);
 void Process(receiveMsg* message);
 void Process_Init(void);
-void AdjustThrust(struct TIM_PROP* tim_prop ,uint8_t thrust);
+void AdjustThrust(TIM_PROP* tim_prop ,uint8_t thrust);
 void AdjustAngle(uint8_t thrust,int8_t angle);
+void AdjustDepth(XL_Network* XL_Net,uint8_t depth);
 #endif /* INC_PROCESS_H_ */
