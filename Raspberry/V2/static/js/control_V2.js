@@ -130,3 +130,41 @@ function sendUart() {
         }
     });
 }
+
+
+
+
+
+// Fonction pour générer une position aléatoire
+function generatePosition() {
+    return {
+        x: Math.random() * 295, // Coordonnée x aléatoire (250 pour rester dans les limites du conteneur)
+        y: Math.random() * 295  // Coordonnée y aléatoire (250 pour rester dans les limites du conteneur)
+    };
+}
+
+// Variable pour stocker la position
+var position = generatePosition();
+
+// Fonction pour afficher la position et la tracer sur la carte
+function updatePosition() {
+    position = generatePosition();
+    console.log("Nouvelle position:", position);
+    drawMarker(position.x, position.y);
+}
+
+// Fonction pour tracer un marqueur sur la carte
+function drawMarker(x, y) {
+    var map = document.getElementById('map');
+    var marker = document.createElement('div');
+    marker.style.width = '5px';
+    marker.style.height = '5px';
+    marker.style.backgroundColor = 'red';
+    marker.style.position = 'absolute';
+    marker.style.left = x + 'px';
+    marker.style.top = y + 'px';
+    map.appendChild(marker);
+}
+
+// Appel de la fonction updatePosition toutes les 3 secondes
+setInterval(updatePosition, 100);
