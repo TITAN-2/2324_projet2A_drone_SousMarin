@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    overflow: hidden; /* Pour éviter le défilement de la page */
+    overflow: hidden; /* Pour Ã©viter le dÃ©filement de la page */
 }
 
 #joystick-profondeur-container {
@@ -13,7 +13,7 @@ body {
     border-bottom-right-radius: 25px; /* Ajustez la valeur pour changer le rayon */
     position: fixed;
     bottom: 100px; /* Ajustez la distance par rapport au bas de la page */
-    left: 100px; /* Ajustez la distance par rapport à la droite de la page */
+    left: 100px; /* Ajustez la distance par rapport Ã  la droite de la page */
 }
 
 #joystick-profondeur-handle {
@@ -38,7 +38,7 @@ body {
     border-bottom-right-radius: 25px; /* Ajustez la valeur pour changer le rayon */
     position: fixed;
     bottom: 100px; /* Ajustez la distance par rapport au bas de la page */
-    left: 200px; /* Ajustez la distance par rapport à la droite de la page */
+    left: 200px; /* Ajustez la distance par rapport Ã  la droite de la page */
 }
 
 #joystick-vitesse-handle {
@@ -63,7 +63,7 @@ body {
     border-bottom-right-radius: 25px; /* Ajustez la valeur pour changer le rayon */
     position: fixed;
     right: 150px; /* Ajustez la distance par rapport au bas de la page */
-    bottom: 100px; /* Ajustez la distance par rapport à la droite de la page */
+    bottom: 100px; /* Ajustez la distance par rapport Ã  la droite de la page */
 }
 
 #joystick-direction-handle {
@@ -84,9 +84,39 @@ body {
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Centre horizontalement */
     text-align: center; /* Centrer le texte horizontalement */
-    display: flex; /* Utiliser le modèle de boîte flexible */
+    display: flex; /* Utiliser le modÃ¨le de boÃ®te flexible */
 }
 
 #joystick-values p {
     margin: 0 20px; /* Marge entre chaque compteur */
+}
+
+
+
+
+#map {
+    width: 300px;
+    height: 300px;
+    background-color: #f0f0f0;
+    position: absolute;
+    top: 20px; /* Distance par rapport au haut de la fenêtre */
+    left: 20px; /* Distance par rapport à la gauche de la fenêtre */
+}
+
+.trait-vertical {
+    position: absolute;
+    left: 170px; /* Marge de gauche */
+    top: 20px; /* Marge supérieure */
+    width: 2px; /* Largeur du trait */
+    height: 300px; /* Hauteur du trait */
+    background-color: black; /* Couleur du trait */
+}
+
+.trait-horizontal {
+    position: absolute;
+    left: 20px; /* Marge de gauche */
+    top: 170px; /* Marge supérieure */
+    width: 300px; /* Largeur du trait */
+    height: 2px; /* Hauteur du trait */
+    background-color: black; /* Couleur du trait */
 }
