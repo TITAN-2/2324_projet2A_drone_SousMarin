@@ -9,8 +9,9 @@
 #define INC_RPICOM_H_
 
 #include "usart.h"
-#include "RPICom.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #define UART_RPI_RX_BUFFER_SIZE 8
 #define UART_RPI_TX_BUFFER_SIZE 10
@@ -38,8 +39,9 @@ typedef struct {
 typedef struct {
 	UART_HandleTypeDef* huart;
 	UART_HandleTypeDef* huartDebug;
-	receiveMsg binaryMessage;
-	sendMsg sendMessage;
+
+	receiveMsg 	receiveMessage;
+	sendMsg 	sendMessage;
 	uint8_t errorNumberRx;
 	uint8_t RxBuffer[UART_RPI_RX_BUFFER_SIZE];
 	uint8_t TxBuffer[UART_RPI_TX_BUFFER_SIZE];
@@ -52,6 +54,7 @@ void RPICom_Init(UART_HandleTypeDef* huart, UART_HandleTypeDef* huartDebug);
 void RPICom_DecodeBinaryMessage(void);
 void RPICom_UartActivate(RPICom_HandleTypeDef* hRPI);
 void acquireData(void);
+int randomize(int min, int max);
 void RPICom_SendBinaryMessage(void);
 
 #endif /* INC_RPICOM_H_ */

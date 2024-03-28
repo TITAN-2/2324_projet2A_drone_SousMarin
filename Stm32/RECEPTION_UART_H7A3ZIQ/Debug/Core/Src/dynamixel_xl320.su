@@ -1,0 +1,9 @@
+../Core/Src/dynamixel_xl320.c:10:10:map	24	static
+../Core/Src/dynamixel_xl320.c:14:6:DMA_receive_delay	8	static
+../Core/Src/dynamixel_xl320.c:25:6:XL320_set_led_ON	32	static
+../Core/Src/dynamixel_xl320.c:46:6:XL320_set_torque_enable	40	static
+../Core/Src/dynamixel_xl320.c:68:6:XL320_set_led_OFF	40	static
+../Core/Src/dynamixel_xl320.c:89:6:XL320_set_pos	48	static
+../Core/Src/dynamixel_xl320.c:114:6:XL320_read_moving	56	static
+../Core/Src/dynamixel_xl320.c:140:10:XL320_read_load	64	static
+../Core/Src/dynamixel_xl320.c:171:6:XL320_ping	128	static
