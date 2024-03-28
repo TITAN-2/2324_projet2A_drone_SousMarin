@@ -43,6 +43,28 @@ void XL320_set_led_ON(UART_HandleTypeDef *m_huart, uint8_t color){
 	HAL_UART_Transmit(m_huart, (uint8_t *) &TxPacket, 13, HAL_MAX_DELAY);
 }
 
+void XL320_set_torque_enable(UART_HandleTypeDef *m_huart){
+	uint8_t TxPacket[13] = {DXL2_0_PACKET_IDX_HEADER_1,
+							DXL2_0_PACKET_IDX_HEADER_2,
+							DXL2_0_PACKET_IDX_HEADER_3,
+							DXL2_0_PACKET_IDX_RESERVED,
+							DXL_BROADCAST_ID,
+							0x06,
+							0x00,
+							DXL_INST_WRITE,
+							DXL_LOBYTE(XL_TORQUE_ENABLE),
+							DXL_HIBYTE(XL_TORQUE_ENABLE),
+							(uint8_t)1,
+							0,
+							0};
+	uint16_t CRC_2 = update_crc(0, TxPacket, 11);
+	TxPacket[11] = DXL_LOBYTE(CRC_2);
+	TxPacket[12] = DXL_HIBYTE(CRC_2);
+
+	HAL_UART_Transmit(m_huart, (uint8_t *) &TxPacket, 13, HAL_MAX_DELAY);
+}
+
+
 void XL320_set_led_OFF(UART_HandleTypeDef *m_huart){
 	uint8_t TxPacket[13] = {DXL2_0_PACKET_IDX_HEADER_1,
 							DXL2_0_PACKET_IDX_HEADER_2,
@@ -65,7 +87,7 @@ void XL320_set_led_OFF(UART_HandleTypeDef *m_huart){
 }
 
 void XL320_set_pos(UART_HandleTypeDef *m_huart, uint16_t pos){
-	const uint16_t POS_MAX = 120; //CHANGE THIS CONSTANT TO AVOID OVERCURRENT IN THE SERVO
+	const uint16_t POS_MAX = 300; //CHANGE THIS CONSTANT TO AVOID OVERCURRENT IN THE SERVO
 	if(pos>POS_MAX) pos = POS_MAX;
 	uint16_t pos_mapped = map(pos, 0, 300, 0, 1023);
 	uint8_t TxPacket[14] = {DXL2_0_PACKET_IDX_HEADER_1,

@@ -3,5 +3,5 @@
 ../Core/Src/RPICom.c:21:9:checkSum	24	static
 ../Core/Src/RPICom.c:29:6:RPICom_DecodeBinaryMessage	32	static
 ../Core/Src/RPICom.c:63:6:acquireData	8	static
-../Core/Src/RPICom.c:75:6:RPICom_SendBinaryMessage	40	static
-../Core/Src/RPICom.c:91:5:randomize	16	static
+../Core/Src/RPICom.c:75:6:RPICom_SendBinaryMessage	8	static
+../Core/Src/RPICom.c:93:5:randomize	16	static

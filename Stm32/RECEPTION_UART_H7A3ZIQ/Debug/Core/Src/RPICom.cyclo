@@ -4,4 +4,4 @@ RPICom.c:21:9:checkSum	2
 RPICom.c:29:6:RPICom_DecodeBinaryMessage	6
 RPICom.c:63:6:acquireData	1
 RPICom.c:75:6:RPICom_SendBinaryMessage	1
-RPICom.c:91:5:randomize	1
+RPICom.c:93:5:randomize	1

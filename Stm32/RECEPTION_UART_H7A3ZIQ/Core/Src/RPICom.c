@@ -20,7 +20,7 @@ void RPICom_UartActivate(RPICom_HandleTypeDef* hRPI){
 
 uint8_t checkSum(uint8_t buffer[],uint8_t buffer_size){
 	uint8_t checkSum = 0;
-	for (int i = 0; i < buffer_size; i++) { //Il ne faut pas prendre en compte le bit ou checkSum est present
+	for (int i = 0; i < buffer_size-1; i++) { //Il ne faut pas prendre en compte le bit ou checkSum est present
 		checkSum ^= buffer[i];
 	}
 	return checkSum;
@@ -84,8 +84,10 @@ void RPICom_SendBinaryMessage(void){ //Declencher par TIM3_IT ttes les 1s
 
 	HAL_UART_Transmit_IT(hRPICom.huart, hRPICom.TxBuffer, UART_RPI_TX_BUFFER_SIZE);
 	//Response RPI
-	uint8_t stringLength = snprintf((char *)hRPICom.DebugBuffer, UART_RPI_DEBUG_BUFFER_SIZE, "[SEND]\nPaquet:\r%u\nBatteryPower:\r%u\nPosition:\r%u-%u-%u°\n",hRPICom.sendMessage.paquetNumber,hRPICom.sendMessage.batteryPower,hRPICom.sendMessage.posX,hRPICom.sendMessage.posY,hRPICom.sendMessage.angleDelta);
+	/**
+	uint8_t stringLength = snprintf((char *)hRPICom.DebugBuffer, UART_RPI_DEBUG_BUFFER_SIZE, "[SEND]\n\rPaquet:\t%u\n\rBatteryPower:\t%u\n\rPosition:\t%u-%u-%u°\n\r",hRPICom.sendMessage.paquetNumber,hRPICom.sendMessage.batteryPower,hRPICom.sendMessage.posX,hRPICom.sendMessage.posY,hRPICom.sendMessage.angleDelta);
 	HAL_UART_Transmit(hRPICom.huartDebug, hRPICom.DebugBuffer, stringLength, 10);
+	 **/
 }
 
 int randomize(int min, int max) {

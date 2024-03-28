@@ -1,8 +1,9 @@
 dynamixel_xl320.c:10:10:map	1
 dynamixel_xl320.c:14:6:DMA_receive_delay	1
 dynamixel_xl320.c:25:6:XL320_set_led_ON	1
-dynamixel_xl320.c:46:6:XL320_set_led_OFF	1
-dynamixel_xl320.c:67:6:XL320_set_pos	2
-dynamixel_xl320.c:92:6:XL320_read_moving	1
-dynamixel_xl320.c:118:10:XL320_read_load	1
-dynamixel_xl320.c:149:6:XL320_ping	1
+dynamixel_xl320.c:46:6:XL320_set_torque_enable	1
+dynamixel_xl320.c:68:6:XL320_set_led_OFF	1
+dynamixel_xl320.c:89:6:XL320_set_pos	2
+dynamixel_xl320.c:114:6:XL320_read_moving	1
+dynamixel_xl320.c:140:10:XL320_read_load	1
+dynamixel_xl320.c:171:6:XL320_ping	1

@@ -110,15 +110,13 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	uint8_t pos = 0;
+
 	while (1)
 	{
-		XL320_set_pos(&huart2, pos);
-		pos=pos+100;
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
 	}
   /* USER CODE END 3 */
 }

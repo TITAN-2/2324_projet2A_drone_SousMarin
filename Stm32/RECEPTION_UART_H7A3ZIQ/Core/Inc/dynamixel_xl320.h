@@ -68,6 +68,8 @@ void XL320_set_led_ON(UART_HandleTypeDef *m_huart, uint8_t color);
 
 void XL320_set_led_OFF(UART_HandleTypeDef *m_huart);
 
+void XL320_set_torque_enable(UART_HandleTypeDef *m_huart);
+
 void XL320_set_pos(UART_HandleTypeDef *m_huart, uint16_t pos);
 
 uint16_t XL320_read_load(UART_HandleTypeDef *m_huart);

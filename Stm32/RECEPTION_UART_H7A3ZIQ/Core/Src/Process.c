@@ -10,23 +10,35 @@
 void Thrust_Init(void){
 
 	HAL_TIM_PWM_Start(TIM_PROP_G.TIM, TIM_PROP_G.CHANNEL);
-	HAL_TIM_PWM_Start(TIM_PROP_D.TIM, TIM_PROP_D.CHANNEL);
-	HAL_Delay(1000);
+	HAL_Delay(500);
 	__HAL_TIM_SET_COMPARE(TIM_PROP_G.TIM, TIM_PROP_G.CHANNEL, MIN_Thrust);
-	__HAL_TIM_SET_COMPARE(TIM_PROP_D.TIM, TIM_PROP_D.CHANNEL, MIN_Thrust);
-	HAL_Delay(1000);
-
+	HAL_Delay(500);
 	__HAL_TIM_SET_COMPARE(TIM_PROP_G.TIM, TIM_PROP_G.CHANNEL, MAX_Thrust);
-	__HAL_TIM_SET_COMPARE(TIM_PROP_D.TIM, TIM_PROP_D.CHANNEL, MAX_Thrust);
-
-	HAL_Delay(1000);
+	HAL_Delay(500);
 	__HAL_TIM_SET_COMPARE(TIM_PROP_G.TIM, TIM_PROP_G.CHANNEL, MIN_Thrust);
+	HAL_Delay(500);
+	HAL_TIM_PWM_Start(TIM_PROP_D.TIM, TIM_PROP_D.CHANNEL);
+	HAL_Delay(500);
+
 	__HAL_TIM_SET_COMPARE(TIM_PROP_D.TIM, TIM_PROP_D.CHANNEL, MIN_Thrust);
-	HAL_Delay(1000);
+
+	HAL_Delay(500);
+	__HAL_TIM_SET_COMPARE(TIM_PROP_D.TIM, TIM_PROP_D.CHANNEL, MAX_Thrust);
+	HAL_Delay(500);
+	__HAL_TIM_SET_COMPARE(TIM_PROP_D.TIM, TIM_PROP_D.CHANNEL, MIN_Thrust);
+	HAL_Delay(500);
+
 }
 void Depth_Init(void){
-	XL320_set_led_ON(XL_Front.huartXL,2);//Green Led
-	XL320_set_led_ON(XL_Back.huartXL,2);
+	uint8_t t=0;
+	while(t<100){
+		//XL320_set_led_ON(XL_Front.huartXL,2); //Green Led
+		XL320_set_led_ON(XL_Back.huartXL,2);
+		XL320_set_torque_enable(XL_Back.huartXL);
+		XL320_set_pos(XL_Front.huartXL, ( uint16_t )0);
+		XL320_set_pos(XL_Back.huartXL, ( uint16_t )0);
+		t++;
+	}
 
 }
 void Process_Init(void){
@@ -35,8 +47,6 @@ void Process_Init(void){
 }
 
 void Process(receiveMsg* message) {
-    //AdjustThrust(&TIM_PROP_G, message->thrust);
-    //AdjustThrust(&TIM_PROP_D, message->thrust);
     AdjustAngle(message->thrust,message->angle);
     AdjustDepth(&XL_Net,message->depth);
 }
@@ -66,10 +76,12 @@ void AdjustDepth(XL_Network* XL_Net,uint8_t depth){
 	//Logique:
 	//on repartit équitablement la descente des ballasts
 
-	XL320_set_pos(XL_Net->XL_Front->huartXL , depth*3); // Dans XL320_set_pos on map de 0,300 --> 0,1023 ici on veut map de 0,100 --> 0,1023
-	XL320_set_pos(XL_Net->XL_Back->huartXL , depth*3);
-	XL_Net->XL_Front->pos = depth*3;
-	XL_Net->XL_Back->pos = depth*3;
+	//XL320_set_pos(XL_Net->XL_Front->huartXL , depth*3); // Dans XL320_set_pos on map de 0,300 --> 0,1023 ici on veut map de 0,100 --> 0,1023
+	XL320_set_pos(XL_Net->XL_Back->huartXL , (uint16_t)depth*3);
+	XL320_set_led_ON(XL_Net->XL_Back->huartXL , 5);
+
+	XL_Net->XL_Front->pos = (uint16_t)depth*3;
+	XL_Net->XL_Back->pos = (uint16_t)depth*3;
 
 
 }
