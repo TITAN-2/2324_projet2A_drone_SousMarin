@@ -30,16 +30,12 @@ void Thrust_Init(void){
 
 }
 void Depth_Init(void){
-	uint8_t t=0;
-	while(t<100){
 		//XL320_set_led_ON(XL_Front.huartXL,2); //Green Led
 		XL320_set_led_ON(XL_Back.huartXL,2);
-		XL320_set_torque_enable(XL_Back.huartXL);
-		XL320_set_pos(XL_Front.huartXL, ( uint16_t )0);
-		XL320_set_pos(XL_Back.huartXL, ( uint16_t )0);
-		t++;
-	}
-
+		XL320_set_control_mode(XL_Back.huartXL,1);
+		XL320_set_torque_enable(XL_Back.huartXL,1);
+		XL320_set_pos(XL_Front.huartXL, (uint16_t )0);
+		XL320_set_pos(XL_Back.huartXL, (uint16_t )0);
 }
 void Process_Init(void){
 	Thrust_Init();

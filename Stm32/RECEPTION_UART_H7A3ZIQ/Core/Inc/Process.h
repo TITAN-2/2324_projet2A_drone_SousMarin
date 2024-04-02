@@ -18,6 +18,9 @@
 #define MIN_Thrust 100
 #define MAX_Thrust 50
 
+#define RACK_SIZE_mm 500
+#define SPEED_XL_rads 2
+#define GEAR_RADIUS_mm 200
 
 typedef struct {
 	TIM_HandleTypeDef* TIM;
