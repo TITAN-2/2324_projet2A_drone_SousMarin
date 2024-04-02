@@ -1,0 +1,198 @@
+:root {
+    --primary-color: #2ca5d84d;
+    --secondary-color: #006d9b;
+    --background-color: #121212;
+    --text-color: #fff;
+    --map-color: #7d7c7c;
+    --line-color: #555;
+}
+
+
+body {
+    margin:             0;
+    overflow:           hidden; /* Pour éviter le défilement de la page */
+    background-color: rgb(0, 0, 0);
+    color:            white; /* Facultatif : changer la couleur du texte pour qu'il soit visible sur fond noir */
+}
+
+#joystick-profondeur-container {
+    width:                      50px;
+    height:                     250px;
+    background-color:           var(--primary-color);
+    border-top-left-radius:     25px; /* Ajustez la valeur pour changer le rayon */
+    border-top-right-radius:    25px; /* Ajustez la valeur pour changer le rayon */
+    border-bottom-left-radius:  25px; /* Ajustez la valeur pour changer le rayon */
+    border-bottom-right-radius: 25px; /* Ajustez la valeur pour changer le rayon */
+    position:                   fixed;
+    bottom:                     50px; /* Ajustez la distance par rapport au bas de la page */
+    left:                       50px; /* Ajustez la distance par rapport à la droite de la page */
+}
+
+#joystick-profondeur-handle {
+    width:              50px;
+    height:             50px;
+    background-color:   var(--secondary-color);
+    border-radius:      50%;
+    position:           absolute;
+    top:                50%;
+    left:               50%;
+    transform:          translate(-50%, -50%);
+    cursor:             pointer;
+}
+
+#joystick-vitesse-container {
+    width:                      50px;
+    height:                     250px;
+    background-color:           var(--primary-color);
+    border-top-left-radius:     25px; /* Ajustez la valeur pour changer le rayon */
+    border-top-right-radius:    25px; /* Ajustez la valeur pour changer le rayon */
+    border-bottom-left-radius:  25px; /* Ajustez la valeur pour changer le rayon */
+    border-bottom-right-radius: 25px; /* Ajustez la valeur pour changer le rayon */
+    position:                   fixed;
+    bottom:                     50px; /* Ajustez la distance par rapport au bas de la page */
+    left:                       150px; /* Ajustez la distance par rapport à la droite de la page */
+}
+
+#joystick-vitesse-handle {
+    width:              50px;
+    height:             50px;
+    background-color:   var(--secondary-color);
+    border-radius:      50%;
+    position:           absolute;
+    top:                90%;
+    left:               50%;
+    transform:          translate(-50%, -50%);
+    cursor:             pointer;
+}
+
+#joystick-direction-container {
+    width:                      400px;
+    height:                     50px;
+    background-color:           var(--primary-color);
+    border-top-left-radius:     25px; /* Ajustez la valeur pour changer le rayon */
+    border-top-right-radius:    25px; /* Ajustez la valeur pour changer le rayon */
+    border-bottom-left-radius:  25px; /* Ajustez la valeur pour changer le rayon */
+    border-bottom-right-radius: 25px; /* Ajustez la valeur pour changer le rayon */
+    position:                   fixed;
+    right:                      100px; /* Ajustez la distance par rapport au bas de la page */
+    bottom:                     50px; /* Ajustez la distance par rapport à la droite de la page */
+}
+
+#joystick-direction-handle {
+    width:              50px;
+    height:             50px;
+    background-color:   var(--secondary-color);
+    border-radius:      50%;
+    position:           absolute;
+    top:                50%;
+    left:               50%;
+    transform:          translate(-50%, -50%);
+    cursor:             pointer;
+}
+
+#joystick-values {
+    position:   fixed;
+    top:        10px; /* Ajustez la distance par rapport au haut de la page */
+    left:       50%; /* Centre horizontalement */
+    transform:  translateX(-50%); /* Centre horizontalement */
+    text-align: center; /* Centrer le texte horizontalement */
+    display:    flex; /* Utiliser le modèle de boîte flexible */
+}
+
+#joystick-values p {
+    margin:         0 20px; /* Marge entre chaque compteur */
+}
+
+#capteurs {
+    position:       fixed;
+    top:            50%; /* Ajustez la distance par rapport au haut de la page */
+    left:           0%; /* Centre horizontalement */
+    transform:      translateY(-50%); /* Centre verticalement */
+    display:        flex; /* Utiliser le modèle de boîte flexible */
+    flex-direction: column; /* Aligner les éléments verticalement */
+    align-items:    center; /* Centrer horizontalement les éléments enfants */
+}
+
+.capteur {
+    margin:     10px 0; /* Ajouter de l'espace entre les capteurs */
+    text-align: center; /* Centrer le texte horizontalement */
+}
+
+.centered-image {
+    position:   fixed;
+    top:        50%;
+    left:       50%;
+    transform:  translate(-50%, -50%);
+    z-index:    -1; /* Mettre l'élément au niveau le plus bas */
+}
+
+
+
+
+
+
+#map {
+    width:              300px;
+    height:             300px;
+    background-color:   var(--map-color);
+    position:           absolute;
+    top:                20px;
+    left:               20px;
+    border-radius:      10px;
+    box-shadow:         0 0 10px rgba(57, 57, 57, 0.5);
+}
+
+.trait-vertical {
+    position: absolute;
+    left:               170px; /* Marge de gauche */
+    top:                20px; /* Marge supérieure */
+    width:              2px; /* Largeur du trait */
+    height:             300px; /* Hauteur du trait */
+    background-color:   var(--line-color); /* Couleur du trait */
+}
+
+.trait-horizontal {
+    position:           absolute;
+    left:               20px; /* Marge de gauche */
+    top:                170px; /* Marge supérieure */
+    width:              300px; /* Largeur du trait */
+    height:             2px; /* Hauteur du trait */
+    background-color:   var(--line-color); /* Couleur du trait */
+}
+
+
+
+.data-container {
+    border:     1px solid #00000000;
+    padding:    100px;
+    width:      100px;
+    position:   fixed; /* Position fixe pour le positionnement absolu */
+    top:        50%; /* Déplace le haut du cadre à 50% du haut de la fenêtre */
+    right:      0; /* Aligne le cadre à droite */
+    transform:  translateY(-50%); /* Déplace le cadre de moitié vers le haut */
+}
+
+
+
+.photo {
+    position:   absolute;
+    width:      200px;
+    height:     200px;
+    top:        0;
+    right:      0;
+}
+
+.top-right-image {
+    position:   absolute;
+    width:      100%;
+    height:     100%;
+    top:        0;
+    right:      0;
+}
+
+.unselectable {
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}

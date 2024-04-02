@@ -1,1 +1,0 @@
-var donnees ={"posX": 255, "posY": 254, "angleDelta": 10, "temperature": 10, "baterryPower": 20};export default donnees;
